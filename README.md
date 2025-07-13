@@ -8,9 +8,9 @@
 </p>
 
 ## Installation
-https://github.com/whyutams/seminar-web.git
-composer install
-.env.example rename to .env
-php artisan key:generate
-php artisan migrate --seed
-php artisan serve
+- git clone https://github.com/whyutams/seminar-web.git
+- composer install
+- .env.example rename to .env
+- php artisan key:generate
+- php artisan migrate --seed
+- php artisan serve
