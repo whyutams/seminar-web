@@ -3,6 +3,8 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +21,11 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/index', '/');
 
 Route::get('/', [LandingController::class, "index"])->name("index");
-Route::get('/beranda', [LandingController::class, "beranda"])->name("beranda");
+Route::get('/form', [RegistrationController::class, 'index'])->name("form");
+Route::get('/dashboard', [DashboardController::class, "redirect"])->name("dashboard")->middleware("auth");
+Route::get('/register', [RegisterController::class, "index"])->name("register");
 Route::get('/login', [LoginController::class, "index"])->name("login");
-Route::get('/dashboard', [DashboardController::class, "index"])->name("dashboard")->middleware("auth");
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout'); 
 
 Route::post('/login', [LoginController::class, "login"]);
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::post('/register', [RegisterController::class, 'store']);

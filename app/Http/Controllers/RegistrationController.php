@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\cr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class LandingController extends Controller
-{
+class RegistrationController extends Controller
+{ 
     public function index()
     {
-        $user = Auth::user();
-
-        if ($user) {
+        if (Auth::check()) {
             return redirect('/dashboard');
         }
-
-        return view("index");
+        
+        return view("registration");
     }
-
+ 
 }

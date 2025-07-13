@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Index - Lumia Bootstrap Template</title>
+    <title>Seminar Internasional 2025</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
 
@@ -55,7 +55,7 @@
                         <div class="col-lg-8">
                             <p>Universitas Negeri Gorontalo - Indonesia</p>
                             <h2 style="font-size: 48px !important;">Seminar Internasional 2025</h2>
-                            <a href="{{ url("index") }}" class="btn-custom1 mt-4">Registration Form</a>
+                            <a href="{{ route("form") }}" class="btn-custom1 mt-4">Registration Form</a>
                         </div>
                     </div>
                 </div>
@@ -126,9 +126,10 @@
                             <div
                                 class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
                                 <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
-                                    src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" alt="Speaker 1" />
-                                <h4>Corporis voluptates officia eiusmod</h4>
-                                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip
+                                    src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="Speaker 2" />
+                                <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, totam minima.
+                                    Doloribus!
                                 </p>
                             </div>
                         </div>
@@ -138,19 +139,9 @@
                                 class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
                                 <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
                                     src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="Speaker 2" />
-                                <h4>Corporis voluptates officia eiusmod</h4>
-                                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4">
-                            <div
-                                class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
-                                <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
-                                    src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" alt="Speaker 1" />
-                                <h4>Corporis voluptates officia eiusmod</h4>
-                                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip
+                                <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, totam minima.
+                                    Doloribus!
                                 </p>
                             </div>
                         </div>
@@ -160,8 +151,21 @@
                                 class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
                                 <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
                                     src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="Speaker 2" />
-                                <h4>Corporis voluptates officia eiusmod</h4>
-                                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip
+                                <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, totam minima.
+                                    Doloribus!
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4">
+                            <div
+                                class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
+                                <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
+                                    src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="Speaker 2" />
+                                <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, totam minima.
+                                    Doloribus!
                                 </p>
                             </div>
                         </div>
@@ -173,13 +177,15 @@
                         <h3>Invited Speakers:</h3>
                     </div>
                     <div class="row">
+
                         <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4">
                             <div
                                 class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
                                 <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
-                                    src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" alt="Speaker 1" />
-                                <h4>Corporis voluptates officia eiusmod</h4>
-                                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip
+                                    src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="Speaker 2" />
+                                <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, totam minima.
+                                    Doloribus!
                                 </p>
                             </div>
                         </div>
@@ -189,19 +195,9 @@
                                 class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
                                 <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
                                     src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="Speaker 2" />
-                                <h4>Corporis voluptates officia eiusmod</h4>
-                                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4">
-                            <div
-                                class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
-                                <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
-                                    src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" alt="Speaker 1" />
-                                <h4>Corporis voluptates officia eiusmod</h4>
-                                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip
+                                <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, totam minima.
+                                    Doloribus!
                                 </p>
                             </div>
                         </div>
@@ -211,8 +207,21 @@
                                 class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
                                 <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
                                     src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="Speaker 2" />
-                                <h4>Corporis voluptates officia eiusmod</h4>
-                                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip
+                                <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, totam minima.
+                                    Doloribus!
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4">
+                            <div
+                                class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
+                                <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
+                                    src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="Speaker 2" />
+                                <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, totam minima.
+                                    Doloribus!
                                 </p>
                             </div>
                         </div>
@@ -254,8 +263,8 @@
                     </div>
 
                     <div class="d-flex justify-content-center justify-content-md-start">
-                        <a class="btn-custom1 mt-5 mt-md-4 mx-md-0 mx-auto" target="_blank" data-aos="zoom-in"
-                            data-aos-delay="500">Registration Now</a>
+                        <a href="{{ route("form") }}" class="btn-custom1 mt-5 mt-md-4 mx-md-0 mx-auto" target="_blank"
+                            data-aos="zoom-in" data-aos-delay="500">Registration Now</a>
                     </div>
 
                 </div>

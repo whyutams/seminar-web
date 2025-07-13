@@ -7,8 +7,12 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        if (Auth::check()) {
+            return redirect('/dashboard');
+        }
+
         return view("login");
     }
 
@@ -34,7 +38,7 @@ class LoginController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/login');
+        return redirect('/');
     }
 
 }

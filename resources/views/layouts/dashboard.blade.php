@@ -44,7 +44,9 @@
     @include("components/header")
 
     <main class="main">
-        @yield('content')
+        <div id="home">
+            @yield('content')
+        </div>
     </main>
 
     @include("components/footer")
