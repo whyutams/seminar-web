@@ -251,8 +251,9 @@ h6 {
   .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
-    color: var(--contrast-color);
-    background-color: var(--nav-hover-color);
+    /* color: var(--contrast-color); */
+    /* background-color: var(--nav-hover-color); */
+    color: var(--nav-hover-color);
   }
 
   .navmenu .dropdown ul {
@@ -290,7 +291,7 @@ h6 {
   .navmenu .dropdown ul .active:hover,
   .navmenu .dropdown ul li:hover>a {
     color: var(--contrast-color);
-    background-color: var(--nav-hover-color);
+    /* background-color: var(--nav-hover-color); */
   }
 
   .navmenu .dropdown:hover>ul {
@@ -444,8 +445,8 @@ h6 {
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
-  color: var(--default-color);
-  background-color: var(--background-color);
+  color: var(--contrast-color);
+  background-color: #3a3a3a;
   font-size: 14px;
   padding-bottom: 50px;
   position: relative;
@@ -466,7 +467,7 @@ h6 {
 }
 
 .footer .footer-about .logo span {
-  color: var(--heading-color);
+  color: var(--contrast-color);
   font-size: 30px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -485,9 +486,9 @@ h6 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  border: 1px solid var(--contrast-color);
   font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  color: var(--contrast-color);
   margin-right: 10px;
   transition: 0.3s;
 }
@@ -502,6 +503,7 @@ h6 {
   font-weight: bold;
   position: relative;
   padding-bottom: 12px;
+  color: var(--accent-color);
 }
 
 .footer .footer-links {
@@ -531,7 +533,7 @@ h6 {
 }
 
 .footer .footer-links ul a {
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: var(--contrast-color);
   display: inline-block;
   line-height: 1;
 }
@@ -557,6 +559,10 @@ h6 {
 .footer .credits {
   margin-top: 6px;
   font-size: 13px;
+}
+
+.footer span.sitename {
+  color: var(--accent-color) !important;
 }
 
 /*--------------------------------------------------------------
@@ -678,7 +684,7 @@ h6 {
 section,
 .section {
   color: var(--default-color);
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
   padding: 60px 0;
   scroll-margin-top: 84px;
   overflow: clip;
@@ -697,7 +703,7 @@ section,
 --------------------------------------------------------------*/
 .section-title {
   text-align: center;
-  padding-bottom: 60px;
+  padding-bottom: 8px;
   position: relative;
 }
 

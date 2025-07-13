@@ -1,18 +1,18 @@
 <header id="header" class="header d-flex align-items-center sticky-top">
         <div class="container position-relative d-flex align-items-center justify-content-between">
 
-            <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-                <!-- Uncomment the line below if you also wish to use an image logo -->
+            <a href="/#" class="logo d-flex align-items-center me-auto me-xl-0">-
                 <img src="{{ asset('templates/img/logo.png') }}" alt="">
                 <h1 class="sitename">Seminar</h1>
             </a>
 
             <nav id="navmenu" class="navmenu">
-                <ul>
-                    <li><a href="#hero" class="active">Home</a></li>
+                <ul class="gap-1">
+                    <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#speakers">Speakers</a></li>
-                    <li><a href="#registration-form">Registration Form</a></li>
-                    <li><a href="#">Login</a></li> 
+                    <li><a href="#event-schedule">Event Schedule</a></li> 
+                    <li><a href="{{-- route("registration") --}}" target="_blank">Registration Form</a></li> 
+                    <li><a class="btn-custom1 mx-2" href="{{ route("login") }}">Login</a></li> 
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>

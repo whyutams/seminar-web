@@ -1,6 +1,8 @@
 <?php
 
-use App\Http\Controllers\PresentasiController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LandingController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,10 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/index', '/');
 
-Route::get('/index', [PresentasiController::class, "index"])->name("index");
-Route::get('/beranda', [PresentasiController::class, "beranda"])->name("beranda");
+Route::get('/', [LandingController::class, "index"])->name("index");
+Route::get('/beranda', [LandingController::class, "beranda"])->name("beranda");
+Route::get('/login', [LoginController::class, "index"])->name("login");
+Route::get('/dashboard', [DashboardController::class, "index"])->name("dashboard")->middleware("auth");
 
+Route::post('/login', [LoginController::class, "login"]);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
