@@ -22,14 +22,9 @@ class UserSeeder extends Seeder
                 'name' => 'Admin',
                 'email' => 'admin@gmail.com',
                 'password' => 'admin123',
-                'role' => 'admin',
-            ],
-            [
-                'name' => 'Wahyu',
-                'email' => 'user@gmail.com',
-                'password' => 'user123',
-                'role' => 'user',
-            ],
+                'role' => 'superadmin',
+                'added_by' => null
+            ]
         ];
 
         foreach ($users as $user) {
@@ -39,6 +34,7 @@ class UserSeeder extends Seeder
                     'name' => $user['name'],
                     'password' => Hash::make($user['password']),
                     'role' => $user['role'],
+                    'added_by' => $user['added_by'],
                 ]
             );
         }

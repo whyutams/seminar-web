@@ -13,12 +13,13 @@
   <link href="{{ asset('templates/css/style.css') }}" rel="stylesheet">
 </head>
 
-<body class="index-page">
- 
+<body class="index-page" style="background-color: #eee;">
+  @include("components/header")
+
 
   <main class="main container">
     @yield("content")
-  </main> 
+  </main>
 
   <script src="{{ asset('templates/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
   <script src="{{ asset('templates/js/main.js') }}"></script>

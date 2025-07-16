@@ -9,8 +9,8 @@
     <meta name="keywords" content="">
 
     <!-- Favicons -->
-    <link href="{{ asset('templates/img/favicon.png') }}" rel="icon">
-    <link href="{{ asset('templates/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+    <link href="{{ asset('img/ung-icon1.png') }}" rel="icon">
+    <link href="{{ asset('img/ung-icon1.png') }}" rel="apple-touch-icon">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -48,7 +48,7 @@
             <!-- Hero Section -->
             <section id="hero" class="hero section dark-background py-5">
 
-                <img src="{{ asset('templates/img/hero-bg.jpg') }}" alt="" data-aos="fade-in">
+                <img src="{{ asset('img/ung-rektorat.jpg') }}" alt="" data-aos="fade-in">
 
                 <div class="container text-center" data-aos="zoom-in" data-aos-delay="100">
                     <div class="row justify-content-center">
@@ -104,132 +104,66 @@
                             <li>Psychological impact for SDGs</li>
                         </ol>
 
-                        <button class="btn-custom1 mt-4">Lorem, ipsum.</button>
+                        <a href="{{ route('form') }}" class="btn-custom1 mt-4">Registration Form</a>
 
                     </div>
                 </section>
             </div>
         </div>
 
-        <section class="section container px-3 px-md-0" id="speakers">
-            <div class="" data-aos="fade-up">
-                <div class="section-title text-center mb-2">
-                    <h2>Speakers</h2>
+        @if ($keynote_speakers->count() > 0 || $invited_speakers->count() > 0)
+            <section class="section container px-3 px-md-0" id="speakers">
+                <div class="" data-aos="fade-up">
+                    <div class="section-title text-center mb-2">
+                        <h2>Speakers</h2>
+                    </div>
+
+                    @if ($keynote_speakers->count())
+                        <div data-aos="fade-up">
+                            <div class="text-left mb-3">
+                                <h3>Keynote Speakers:</h3>
+                            </div>
+                            <div class="row">
+                                @foreach ($keynote_speakers as $speaker)
+                                    <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4">
+                                        <div
+                                            class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
+                                            <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
+                                                src="{{ asset('storage/' . $speaker->photo) }}" alt="{{ $speaker->name }}" />
+                                            <h4>{{ $speaker->name }}</h4>
+                                            <p>{{ $speaker->description }}</p>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    @endif
+
+
+                    @if ($invited_speakers->count())
+                        <div data-aos="fade-up mb-5">
+                            <div class="text-left mb-3">
+                                <h3>Invited Speakers:</h3>
+                            </div>
+                            <div class="row">
+                                @foreach ($invited_speakers as $speaker)
+                                    <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4">
+                                        <div
+                                            class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
+                                            <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
+                                                src="{{ asset('storage/' . $speaker->photo) }}" alt="{{ $speaker->name }}" />
+                                            <h4>{{ $speaker->name }}</h4>
+                                            <p>{{ $speaker->description }}</p>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    @endif
+
                 </div>
-
-                <div data-aos="fade-up">
-                    <div class="text-left mb-3">
-                        <h3>Keynote Speakers:</h3>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4">
-                            <div
-                                class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
-                                <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
-                                    src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="Speaker 2" />
-                                <h4>Lorem ipsum dolor sit amet consectetur.</h4>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, totam minima.
-                                    Doloribus!
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4">
-                            <div
-                                class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
-                                <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
-                                    src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="Speaker 2" />
-                                <h4>Lorem ipsum dolor sit amet consectetur.</h4>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, totam minima.
-                                    Doloribus!
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4">
-                            <div
-                                class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
-                                <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
-                                    src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="Speaker 2" />
-                                <h4>Lorem ipsum dolor sit amet consectetur.</h4>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, totam minima.
-                                    Doloribus!
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4">
-                            <div
-                                class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
-                                <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
-                                    src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="Speaker 2" />
-                                <h4>Lorem ipsum dolor sit amet consectetur.</h4>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, totam minima.
-                                    Doloribus!
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div data-aos="fade-up mb-5">
-                    <div class="text-left mb-3">
-                        <h3>Invited Speakers:</h3>
-                    </div>
-                    <div class="row">
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4">
-                            <div
-                                class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
-                                <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
-                                    src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="Speaker 2" />
-                                <h4>Lorem ipsum dolor sit amet consectetur.</h4>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, totam minima.
-                                    Doloribus!
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4">
-                            <div
-                                class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
-                                <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
-                                    src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="Speaker 2" />
-                                <h4>Lorem ipsum dolor sit amet consectetur.</h4>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, totam minima.
-                                    Doloribus!
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4">
-                            <div
-                                class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
-                                <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
-                                    src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="Speaker 2" />
-                                <h4>Lorem ipsum dolor sit amet consectetur.</h4>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, totam minima.
-                                    Doloribus!
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4">
-                            <div
-                                class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
-                                <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
-                                    src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="Speaker 2" />
-                                <h4>Lorem ipsum dolor sit amet consectetur.</h4>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, totam minima.
-                                    Doloribus!
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
+            </section>
+        @endif
 
         <div class="event-schedule">
             <section id="event-schedule" class="section container px-3 px-md-0">
