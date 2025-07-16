@@ -86,7 +86,7 @@ class DashboardUserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, User $user)
-    { 
+    {
         if ($user->role === 'superadmin' && auth()->user()->id !== $user->id) {
             return back()->with('error', 'You are not allowed to modify the superadmin.');
         }
