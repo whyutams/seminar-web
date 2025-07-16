@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardRegistrationController;
 use App\Http\Controllers\DashboardSpeakerController;
 use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\LandingController;
@@ -30,14 +31,16 @@ Route::get('/form', [RegistrationController::class, 'index'])->name("form");
 
 Route::post('/login', [LoginController::class, "login"]);
 Route::post('/register', [RegisterController::class, 'store']);
+Route::post('/form', [RegistrationController::class, 'store'])->name('form.submit');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::prefix('dashboard')
-    ->name('dashboard.')
-    ->group(function () {
-        Route::get('', [DashboardController::class, "redirect"])->name("dashboard");
+        ->name('dashboard.')
+        ->group(function () {
+            Route::get('', [DashboardController::class, "redirect"])->name("dashboard");
 
-        Route::resource('users', DashboardUserController::class)->names('users');
-        Route::resource('speakers', DashboardSpeakerController::class)->names('speakers');
-    });
+            Route::resource('users', DashboardUserController::class)->names('users');
+            Route::resource('speakers', DashboardSpeakerController::class)->names('speakers');
+            Route::resource('registrations', DashboardRegistrationController::class)->names('registrations')->parameters(['registrations' => 'regist']);
+        });
 });

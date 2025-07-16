@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Registration;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class RegistrationController extends Controller
+class DashboardRegistrationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +14,9 @@ class RegistrationController extends Controller
      */
     public function index()
     {
-        if (Auth::check()) {
-            return redirect('/dashboard');
-        }
+        $registrations = Registration::latest()->paginate(10);
 
-        return view('registration');
+        return view('dashboard.registrations.index', compact('registrations'));
     }
 
     /**
@@ -40,18 +37,7 @@ class RegistrationController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'full_name' => 'required|string|max:255',
-            'department' => 'required|string|max:255',
-            'institution' => 'required|string|max:255',
-            'country' => 'required|string|max:255',
-            'phone' => 'required|string|max:20',
-            'email' => 'required|email|max:255',
-        ]);
-
-        Registration::create($validated);
-
-        return redirect()->back()->with('success', 'Your registration has been submitted successfully.');
+        //
     }
 
     /**
@@ -73,7 +59,7 @@ class RegistrationController extends Controller
      */
     public function edit(Registration $regist)
     {
-        //
+        return view('dashboard.registrations.edit', compact('regist'));
     }
 
     /**
@@ -85,7 +71,18 @@ class RegistrationController extends Controller
      */
     public function update(Request $request, Registration $regist)
     {
-        //
+        $request->validate([
+            'full_name' => 'required|string|max:255',
+            'department' => 'required|string|max:255',
+            'institution' => 'required|string|max:255',
+            'country' => 'required|string|max:255',
+            'phone' => 'required|string|max:20',
+            'email' => 'required|email|max:255',
+        ]);
+
+        $regist->update($request->all());
+
+        return redirect()->route('dashboard.registrations.index')->with('success', 'Registration updated successfully.');
     }
 
     /**
@@ -96,6 +93,9 @@ class RegistrationController extends Controller
      */
     public function destroy(Registration $regist)
     {
-        //
+        $regist->delete();
+
+        return redirect()->route('dashboard.registrations.index')
+            ->with('success', 'Registration deleted successfully.');
     }
 }
