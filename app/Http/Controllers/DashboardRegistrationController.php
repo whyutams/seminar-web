@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Registration;
 use Illuminate\Http\Request;
 use App\Exports\RegistrationsExport;
-use Maatwebsite\Excel\Facades\Excel; 
+use Maatwebsite\Excel\Facades\Excel;
 
 class DashboardRegistrationController extends Controller
 {
@@ -102,8 +102,8 @@ class DashboardRegistrationController extends Controller
     }
 
     public function export()
-{
-    return Excel::download(new RegistrationsExport, 'registrations.xlsx');
-}
+    {
+        return Excel::download(new RegistrationsExport, 'registrations.xlsx');
+    }
 
 }
