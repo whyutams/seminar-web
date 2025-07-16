@@ -38,9 +38,10 @@ Route::group(['middleware' => ['auth']], function () {
         ->name('dashboard.')
         ->group(function () {
             Route::get('', [DashboardController::class, "redirect"])->name("dashboard");
-
+            
             Route::resource('users', DashboardUserController::class)->names('users');
             Route::resource('speakers', DashboardSpeakerController::class)->names('speakers');
+            Route::get('registrations/export', [DashboardRegistrationController::class, 'export'])->name('registrations.export');
             Route::resource('registrations', DashboardRegistrationController::class)->names('registrations')->parameters(['registrations' => 'regist']);
         });
 });
