@@ -3,7 +3,7 @@
 
         <a href="/#" class="logo d-flex align-items-center me-auto me-xl-0">-
             <img src="{{ asset('img/ung-icon1.png') }}" alt="">
-            <h1 class="sitename">Seminar</h1>
+            <h1 class="sitename" style="color: #0c5f9a;">FT-UNG</h1>
         </a>
 
         @auth
