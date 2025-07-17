@@ -90,10 +90,26 @@
                         <div>
                             {{ $registrations->links() }}
                         </div>
+
+                        <div>
+                            <button class="btn btn-success" onclick="downloadAndClose()">
+                                <i class="fas fa-download"></i> Download Excel
+                            </button>
+                        </div>
+
                     </div>
 
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        function downloadAndClose() {
+            const w = window.open("{{ route('dashboard.registrations.export') }}", "_blank");
+            setTimeout(() => {
+                w.close();
+            }, 3000);
+        }
+    </script>
 @endsection

@@ -25,7 +25,8 @@ class DashboardController extends Controller
         }
     }
 
-    public function speakers() {
+    public function speakers()
+    {
         return view("dashboard.speakers");
     }
 
