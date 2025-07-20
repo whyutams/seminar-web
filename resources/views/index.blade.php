@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Seminar Internasional 2025</title>
+    <title>Seminar Nasional 2025</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
 
@@ -48,13 +48,13 @@
             <!-- Hero Section -->
             <section id="hero" class="hero section dark-background py-5">
 
-                <img src="{{ asset('img/ung-rektorat.jpg') }}" alt="" data-aos="fade-in">
+                <img src="{{ $landing->hero_image == null ? asset('img/ung-rektorat.jpg') : asset('storage/' . $landing->hero_image)}}" alt="" data-aos="fade-in">
 
                 <div class="container text-center" data-aos="zoom-in" data-aos-delay="100">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
                             <p>Universitas Negeri Gorontalo - Indonesia</p>
-                            <h2 style="font-size: 48px !important;">Seminar Internasional 2025</h2>
+                            <h2 style="font-size: 48px !important;">Seminar Nasional 2025</h2>
                             <a href="{{ route("form") }}" class="btn-custom1 mt-4">Registration Form</a>
                         </div>
                     </div>
@@ -66,46 +66,11 @@
                 <section class="section container px-3 px-md-0">
                     <div class="section-title my-2" data-aos="fade-up">
                         <small>WELCOME TO</small>
-                        <h2>Seminar Internasional 2025</h2>
+                        <h2>Seminar Nasional 2025</h2>
                     </div>
 
                     <div data-aos="fade-up">
-                        <p>
-                            The organizing Committee of the 8th International Conference on Education Innovation (ICEI)
-                            2024 is an interdisciplinary platform for teachers, researchers, practitioners, and
-                            academicians to present and discuss the latest research findings, concerns as well as
-                            practical challenges encountered and solutions adopted in the fields of green education
-                            innovation in managing sustainable environment.
-                        </p>
-
-                        <p><strong>TOPICS</strong></p>
-                        <p>
-                            <span style="font-weight: 400;">The topic of the 8th International Conference on Education
-                                Innovation (ICEI) 2024 is </span>
-                            <strong><em>“Green Education Innovation By Equipping Individuals With The Power Of
-                                    Artificial Intelligence To Achieve Sustainable Development Goals”</em></strong>
-                        </p>
-
-                        <p><strong>SUBJECT AREA</strong></p>
-                        <ol>
-                            <li>Life long learning and distance education to SDG’s</li>
-                            <li>Green innovation for sustainable development</li>
-                            <li>Design, implementation and evaluation of innovative technology education</li>
-                            <li>Equal access to quality primary education</li>
-                            <li>Entrepeneurs education for sustanaible development goals</li>
-                            <li>Vocational education and training</li>
-                            <li>The role of entrepreneur education for sustainable development</li>
-                            <li>Technology and science education on SDG’s</li>
-                            <li>Sustainable teacher training and SDG knowledge</li>
-                            <li>Inclusive and equitable quality education</li>
-                            <li>Blended learning and teaching for SDG’s</li>
-                            <li>Problem-based and project-based learning for sustainable development</li>
-                            <li>Guidance and counseling in sustainability of education system</li>
-                            <li>Psychological impact for SDGs</li>
-                        </ol>
-
-                        <a href="{{ route('form') }}" class="btn-custom1 mt-4">Registration Form</a>
-
+                        {!! $landing->main_description !!}
                     </div>
                 </section>
             </div>
@@ -176,10 +141,7 @@
                 <div class="mb-4" data-aos="fade-up">
                     <div class="d-md-flex d-inline justify-content-between align-items-start px-2">
                         <p class="me-3" style="flex: 1;">
-                            In the upcoming event, the 8th International Conference on Education Innovation (ICEI) 2024
-                            is organized by Universitas Negeri Surabaya, will be held on 10 August, 2024 in Surabaya,
-                            Indonesia. The conferences will be conducted via Zoom Meeting and the offline mode will be
-                            held at Auditorium Universitas Negeri Surabaya Floor 9, Kampus Lidah Wetan, Surabaya.
+                            {{ $landing->schedule_description }}
                         </p>
 
                         <div
@@ -190,7 +152,9 @@
                             </div>
 
                             <div class="text-start">
-                                <p class="mb-0" style="font-size: x-large;">14 July, 2025</p>
+                                <p class="mb-0" style="font-size: x-large;">
+                                    {{(DateTime::createFromFormat('Y-m-d', $landing->schedule_date))->format('d F, Y')}}
+                                </p>
                                 <p class="text-uppercase mb-0" style="font-size: small;">Conference Day</p>
                             </div>
                         </div>

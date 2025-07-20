@@ -44,26 +44,26 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="name" name="name"
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter name"
                                 value="{{ old('name') }}" required>
                         </div>
 
                         <div class="form-group">
                             <label for="description">Description <span class="text-danger">*</span></label>
-                            <textarea class="form-control" id="description" name="description" rows="3" required>{{ old('description') }}</textarea>
+                            <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter description" required>{{ old('description') }}</textarea>
                         </div>
 
                         <div class="form-group">
                             <label for="address">Address <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="address" name="address"
-                                value="{{ old('address') }}" required>
+                                value="{{ old('address') }}" placeholder="Enter address" required>
                         </div>
 
                         <div class="form-group">
                             <label for="type">Type <span class="text-danger">*</span></label>
                             <select name="type" id="type" class="form-control" required>
-                                <option value="keynote" {{ old('type') == 'keynote_speaker' ? 'selected' : '' }}>Keynote Speaker</option>
-                                <option value="invited" {{ old('type') == 'invited_speaker' ? 'selected' : '' }}>Invited Speaker</option>
+                                <option value="keynote" {{ old('type') == 'keynote' ? 'selected' : '' }}>Keynote Speaker</option>
+                                <option value="invited" {{ old('type') == 'invited' ? 'selected' : '' }}>Invited Speaker</option>
                             </select>
                         </div>
 

@@ -38,7 +38,7 @@
                             <p>Keynote Speakers</p>
                         </div>
                         <div class="icon">
-                            <i class="bi bi-volume-up-fill"></i>
+                            <i class="bi bi-person-badge-fill" style="font-size: 60px;"></i>
                         </div>
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
@@ -53,7 +53,7 @@
                             <p>Invited Speakers</p>
                         </div>
                         <div class="icon">
-                            <i class="bi bi-volume-up-fill"></i>
+                            <i class="bi bi-person-badge-fill" style="font-size: 60px;"></i>
                         </div>
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
@@ -64,12 +64,12 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3>0</h3>
+                        <h3>{{ $total_regis }}</h3>
 
                             <p>Registrant</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-stats-bars"></i>
+                            <i class="bi bi-clipboard-data-fill" style="font-size: 60px;"></i>
                         </div>
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>

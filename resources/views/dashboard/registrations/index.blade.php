@@ -62,7 +62,7 @@
                                         </a>
                                         <form action="{{ route('dashboard.registrations.destroy', $r->id) }}" method="POST"
                                             class="d-inline"
-                                            onsubmit="return confirm('Are you sure you want to delete this user?')">
+                                            onsubmit="return confirm('Are you sure you want to delete?')">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-sm btn-danger">
@@ -92,7 +92,7 @@
                         </div>
 
                         <div>
-                            <button class="btn btn-success" onclick="downloadAndClose()">
+                            <button class="btn btn-success" onclick="downloadAndClose()" {{ $registrations_count > 0 ? '' : 'disabled' }}>
                                 <i class="fas fa-download"></i> Download Excel
                             </button>
                         </div>

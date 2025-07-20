@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardLandingController;
 use App\Http\Controllers\DashboardRegistrationController;
 use App\Http\Controllers\DashboardSpeakerController;
 use App\Http\Controllers\DashboardUserController;
@@ -43,5 +44,6 @@ Route::group(['middleware' => ['auth']], function () {
             Route::resource('speakers', DashboardSpeakerController::class)->names('speakers');
             Route::get('registrations/export', [DashboardRegistrationController::class, 'export'])->name('registrations.export');
             Route::resource('registrations', DashboardRegistrationController::class)->names('registrations')->parameters(['registrations' => 'regist']);
+            Route::resource('landing', DashboardLandingController::class)->names('landing');
         });
 });

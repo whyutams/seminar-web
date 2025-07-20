@@ -7,19 +7,23 @@
         </a>
 
         @auth
-            @if (Auth::user()->role === 'admin')
+            @if (Auth::user()->role === 'admin' || Auth::user()->role === 'superadmin')
                 <nav id="navmenu" class="navmenu">
                     <ul class="gap-1">
-                        <li><a href="#home" class="active">Home</a></li>
-                        <li><a class="btn-custom1 mx-2" href="{{ route("logout") }}">Logout</a></li>
+                        <li><a href="/#home" class="active">Home</a></li>
+                        <li><a href="/#speakers">Speakers</a></li>
+                        <li><a href="/#event-schedule">Event Schedule</a></li> 
+                        <li><a class="btn-custom1 mx-2" href="{{ url("/dashboard") }}">Dashboard</a></li>
                     </ul>
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
             @elseif (Auth::user()->role === 'user')
                 <nav id="navmenu" class="navmenu">
                     <ul class="gap-1">
-                        <li><a href="#home" class="active">Home</a></li>
-                        <li><a class="btn-custom1 mx-2" href="{{ route("logout") }}">Logout</a></li>
+                        <li><a href="/#home" class="active">Home</a></li>
+                        <li><a href="/#speakers">Speakers</a></li>
+                        <li><a href="/#event-schedule">Event Schedule</a></li> 
+                        <li><a class="btn-custom1 mx-2" href="{{ url("/logout") }}">Logout</a></li>
                     </ul>
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>

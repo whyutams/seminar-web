@@ -111,6 +111,14 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ url("dashboard/landing") }}" class="nav-link">
+                                <i class="nav-icon bi bi-file-text-fill"></i>
+                                <p>
+                                    Landing
+                                </p>
+                            </a>
+                        </li>
                         <li class="nav-header">DATA</li>
                         <li class="nav-item">
                             <a href="{{ url("dashboard/users") }}" class="nav-link">
@@ -130,7 +138,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{ url("dashboard/registrations") }}" class="nav-link">
-                                <i class="nav-icon bi bi-file-text-fill"></i>
+                                <i class="nav-icon bi bi-clipboard-data-fill"></i>
                                 <p>
                                     Registrations
                                 </p>
@@ -246,6 +254,32 @@
     <!-- <script src="{{ asset('adminlte/dist/js/demo.js') }}"></script> -->
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ asset('adminlte/dist/js/pages/dashboard.js') }}"></script>
+
+    <!-- Page specific script -->
+    <script>
+        $(function () {
+            // Summernote
+            $('#summernote').summernote({
+                height: 350,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'italic', 'underline']],
+                    ['fontname', ['fontname']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ol', 'ul', 'paragraph', 'height']],
+                    ['insert', ['link']],
+                    ['view', ['undo', 'redo', 'fullscreen']]
+                ]
+            })
+
+            // CodeMirror
+            CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+                mode: "htmlmixed",
+                theme: "monokai"
+            });
+        })
+    </script>
 </body>
 
 </html>

@@ -17,8 +17,9 @@ class DashboardRegistrationController extends Controller
     public function index()
     {
         $registrations = Registration::latest()->paginate(10);
+        $registrations_count = Registration::count();
 
-        return view('dashboard.registrations.index', compact('registrations'));
+        return view('dashboard.registrations.index', compact('registrations', 'registrations_count'));
     }
 
     /**

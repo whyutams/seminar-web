@@ -68,8 +68,8 @@
                         <div class="form-group">
                             <label for="type">Type <span class="text-danger">*</span></label>
                             <select name="type" id="type" class="form-control" required>
-                                <option value="keynote_speaker" {{ old('type', $speaker->type) == 'keynote_speaker' ? 'selected' : '' }}>Keynote Speaker</option>
-                                <option value="invited_speaker" {{ old('type', $speaker->type) == 'invited_speaker' ? 'selected' : '' }}>Invited Speaker</option>
+                                <option value="keynote" {{ old('type', $speaker->type) == 'keynote' ? 'selected' : '' }}>Keynote Speaker</option>
+                                <option value="invited" {{ old('type', $speaker->type) == 'invited' ? 'selected' : '' }}>Invited Speaker</option>
                             </select>
                         </div>
 

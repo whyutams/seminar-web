@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->string('name');
             $table->text('description')->nullable();
             $table->string('address')->nullable();
-            $table->enum('type', ['Keynote speaker', 'Invited speaker']);
+            $table->enum('type', ['keynote', 'invited']);
             $table->string('photo')->nullable();  
             $table->unsignedBigInteger('added_by')->nullable();  
             $table->timestamps();

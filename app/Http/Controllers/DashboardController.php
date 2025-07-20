@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Registration;
 use App\Models\Speaker;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -13,11 +14,12 @@ class DashboardController extends Controller
     {
         $user = Auth::user();
         $total_users = User::count();
+        $total_regis = Registration::count();
         $total_keynote_speakers = Speaker::where('type', 'keynote')->count();
         $total_invited_speakers = Speaker::where('type', 'invited')->count();
 
         if ($user->role === 'admin' || $user->role === 'superadmin') {
-            return view('dashboard.admin', compact('total_users', 'total_keynote_speakers', 'total_invited_speakers'));
+            return view('dashboard.admin', compact('total_users', 'total_keynote_speakers', 'total_invited_speakers', 'total_regis'));
         } elseif ($user->role === 'user') {
             return "Welcome user.";
         } else {
