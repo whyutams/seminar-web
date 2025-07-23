@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Hero;
 use App\Models\Landing;
 use Illuminate\Http\Request;
 use Storage;
@@ -16,8 +17,9 @@ class DashboardLandingController extends Controller
     public function index()
     {
         $landing = Landing::with('creator')->first();
+        $heroes = Hero::with('creator')->get();
 
-        return view("dashboard.landing.edit", compact('landing'));
+        return view("dashboard.landing.edit", compact('landing', 'heroes'));
     }
 
     /**

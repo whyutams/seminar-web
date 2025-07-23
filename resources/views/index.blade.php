@@ -29,6 +29,7 @@
     <!-- Main CSS File -->
     <link href="{{ asset('templates/css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('templates/css/style.css') }}" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- =======================================================
   * Template Name: Lumia
@@ -44,23 +45,100 @@
     @include("components/header")
 
     <main class="main">
+        <style>
+            #heroCarousel .hero-image-container {
+                position: relative;
+                height: 600px;
+                overflow: hidden;
+            }
+
+            #heroCarousel::before {
+                content: "";
+                background: color-mix(in srgb, var(--background-color), transparent 40%);
+                position: absolute;
+                inset: 0;
+                z-index: 1;
+            }
+
+            #heroCarousel img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            #heroCarousel .content {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+            }
+
+            #heroCarousel .content .row {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                transform: translate(-50%, -50%);
+            }
+
+            #heroCarousel .content .row p {
+                margin: 10px 0 0 0;
+                font-size: 24px;
+                color: var(--heading-color);
+            }
+
+            #heroCarousel .content .row h2 {
+                margin: 0;
+                font-size: 48px;
+                font-weight: 700;
+            }
+        </style>
+
         <div id="home">
-            <!-- Hero Section -->
-            <section id="hero" class="hero section dark-background py-5">
+            <div id="heroCarousel" class="carousel slide dark-background" data-bs-ride="carousel">
 
-                <img src="{{ $landing->hero_image == null ? asset('img/ung-rektorat.jpg') : asset('storage/' . $landing->hero_image)}}" alt="" data-aos="fade-in">
-
-                <div class="container text-center" data-aos="zoom-in" data-aos-delay="100">
+                <div class="content container text-center" data-aos="zoom-in" data-aos-delay="100">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
-                            <p>Universitas Negeri Gorontalo - Indonesia</p>
-                            <h2 style="font-size: 48px !important;">Seminar Nasional 2025</h2>
+                            <p class="text-white">Universitas Negeri Gorontalo - Indonesia</p>
+                            <h2 class="text-white" style="font-size: 48px !important;">Seminar Nasional 2025</h2>
                             <a href="{{ route("form") }}" class="btn-custom1 mt-4">Registration Form</a>
                         </div>
                     </div>
                 </div>
+                @if ($heroes->count() > 1)
+                    <div class="carousel-indicators">
+                        @foreach ($heroes as $index => $hero)
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="{{$index}}"
+                                class="@if($index === 0) active @endif"
+                                aria-current="@if($index === 0) true @else false @endif"></button>
+                        @endforeach
+                    </div>
+                @endif
 
-            </section><!-- /Hero Section -->
+                <div class="carousel-inner">
+                    @foreach ($heroes as $index => $hero)
+                        <div class="carousel-item @if($index === 0) active @endif">
+                            <div class="hero-image-container">
+                                <img src="{{ asset('storage/' . $hero->image) }}" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+
+                @if ($heroes->count() > 1)
+                    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                @endif
+            </div>
 
             <div class="bg-1">
                 <section class="section container px-3 px-md-0">
@@ -75,6 +153,7 @@
                 </section>
             </div>
         </div>
+
 
         @if ($keynote_speakers->count() > 0 || $invited_speakers->count() > 0)
             <section class="section container px-3 px-md-0" id="speakers">

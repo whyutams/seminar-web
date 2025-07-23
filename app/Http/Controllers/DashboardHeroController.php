@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Registration;
+use App\Models\cr;
+use App\Models\Hero;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
-class RegistrationController extends Controller
+class DashboardHeroController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class RegistrationController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { 
-        return view('registration');
+    {
+        //
     }
 
     /**
@@ -36,27 +37,27 @@ class RegistrationController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'full_name' => 'required|string|max:255',
-            'department' => 'required|string|max:255',
-            'institution' => 'required|string|max:255',
-            'country' => 'required|string|max:255',
-            'phone' => 'required|string|max:20',
-            'email' => 'required|email|max:255',
+        $request->validate([
+            'image' => 'required|image',
         ]);
 
-        Registration::create($validated);
+        $path = $request->file('image')->store('landings/hero-images', 'public');
 
-        return redirect()->back()->with('success', 'Your registration has been submitted successfully.');
+        Hero::create([
+            'image' => $path,
+            'uploaded_by' => auth()->id(),
+        ]);
+
+        return back()->with('success', 'Hero image uploaded successfully.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Registration  $regist
+     * @param  \App\Models\cr  $cr
      * @return \Illuminate\Http\Response
      */
-    public function show(Registration $regist)
+    public function show(cr $cr)
     {
         //
     }
@@ -64,10 +65,10 @@ class RegistrationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Registration  $regist
+     * @param  \App\Models\cr  $cr
      * @return \Illuminate\Http\Response
      */
-    public function edit(Registration $regist)
+    public function edit(cr $cr)
     {
         //
     }
@@ -76,10 +77,10 @@ class RegistrationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Registration  $regist
+     * @param  \App\Models\cr  $cr
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Registration $regist)
+    public function update(Request $request, cr $cr)
     {
         //
     }
@@ -87,11 +88,17 @@ class RegistrationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Registration  $regist
+     * @param  \App\Models\Hero $hero
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Registration $regist)
+    public function destroy(Hero $hero)
     {
-        //
+        if (Storage::disk('public')->exists($hero->image)) {
+            Storage::disk('public')->delete($hero->image);
+        }
+
+        $hero->delete();
+
+        return back()->with('success', 'Hero image deleted successfully.');
     }
 }
