@@ -119,13 +119,21 @@
                 @endif
 
                 <div class="carousel-inner">
-                    @foreach ($heroes as $index => $hero)
-                        <div class="carousel-item @if($index === 0) active @endif">
+                    @if($heroes->count() > 1)
+                        @foreach ($heroes as $index => $hero)
+                            <div class="carousel-item @if($index === 0) active @endif">
+                                <div class="hero-image-container">
+                                    <img src="{{ asset('storage/' . $hero->image) }}" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                        @endforeach
+                    @else
+                        <div class="carousel-item active">
                             <div class="hero-image-container">
-                                <img src="{{ asset('storage/' . $hero->image) }}" class="d-block w-100" alt="...">
+                                <img src="{{ asset('img/ung-rektorat.jpg') }}" class="d-block w-100" alt="...">
                             </div>
                         </div>
-                    @endforeach
+                    @endif
                 </div>
 
                 @if ($heroes->count() > 1)
