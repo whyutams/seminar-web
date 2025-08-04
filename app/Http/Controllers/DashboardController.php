@@ -21,7 +21,7 @@ class DashboardController extends Controller
         if ($user->role === 'admin' || $user->role === 'superadmin') {
             return view('dashboard.admin', compact('total_users', 'total_keynote_speakers', 'total_invited_speakers', 'total_regis'));
         } elseif ($user->role === 'user') {
-            return "Welcome user.";
+            return view('dashboard-user');
         } else {
             abort(403);
         }

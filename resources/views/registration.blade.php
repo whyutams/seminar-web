@@ -36,8 +36,10 @@
 
         <div class="mb-3">
         <label for="department" class="form-label">Department / Faculty</label>
-        <input type="text" id="department" name="department"
-          class="form-control @error('department') is-invalid @enderror" value="{{ old('department') }}" required>
+        <select id="department-dropdown" name="department"
+          class="form-select @error('department') is-invalid @enderror" disabled required>
+          <option selected disabled></option>
+        </select>
         @error('department')
       <div class="invalid-feedback">{{ $message }}</div>
       @enderror
@@ -45,8 +47,10 @@
 
         <div class="mb-3">
         <label for="institution" class="form-label">Institution</label>
-        <input type="text" id="institution" name="institution"
-          class="form-control @error('institution') is-invalid @enderror" value="{{ old('institution') }}" required>
+        <select id="institution-dropdown" name="institution"
+          class="form-select @error('institution') is-invalid @enderror" disabled required>
+          <option selected disabled></option>
+        </select>
         @error('institution')
       <div class="invalid-feedback">{{ $message }}</div>
       @enderror
@@ -54,8 +58,10 @@
 
         <div class="mb-3">
         <label for="country" class="form-label">Country</label>
-        <input type="text" id="country" name="country" class="form-control @error('country') is-invalid @enderror"
-          value="{{ old('country') }}" required>
+        <select id="country-dropdown" name="country" class="form-select @error('country') is-invalid @enderror"
+          disabled required>
+          <option selected disabled></option>
+        </select>
         @error('country')
       <div class="invalid-feedback">{{ $message }}</div>
       @enderror
@@ -91,4 +97,65 @@
     </div>
     </div>
   </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    fetch('{{ asset('json/universitas.json') }}')
+      .then(res => res.json())
+      .then(data => {
+      const select = document.getElementById('institution-dropdown');
+      const oldValue = "{{ old('universitas') }}";
+
+      data.forEach((u, i) => {
+        const option = document.createElement('option');
+        option.value = u.name;
+        option.textContent = u.name;
+
+        if (u.name == oldValue) option.selected = true;
+
+        select.appendChild(option);
+
+        if (i + 1 == data.length) select.disabled = false;
+      });
+      });
+
+    fetch('{{ asset('json/country.json') }}')
+      .then(res => res.json())
+      .then(data => {
+      const select = document.getElementById('country-dropdown');
+      const oldValue = "{{ old('country') }}";
+
+      data.forEach((c, i) => {
+        const option = document.createElement('option');
+        option.value = c;
+        option.textContent = c;
+
+        if (c == oldValue) option.selected = true;
+
+        select.appendChild(option);
+
+        if (i + 1 == data.length) select.disabled = false; else if (c == data[0]) option.selected = true;
+      });
+      });
+
+    fetch('{{ asset('json/bidang.json') }}')
+      .then(res => res.json())
+      .then(data => {
+      const select = document.getElementById('department-dropdown');
+      const oldValue = "{{ old('department') }}";
+
+      data.forEach((c, i) => {
+        const option = document.createElement('option');
+        option.value = c;
+        option.textContent = c;
+
+        if (c == oldValue) option.selected = true;
+
+        select.appendChild(option);
+
+        if (i + 1 == data.length) select.disabled = false;
+      });
+      });
+    });
+  </script>
 @endsection

@@ -1,0 +1,66 @@
+[
+    {
+        "name": "Universitas Negeri Gorontalo",
+        "type": "negeri"
+    },
+    {
+        "name": "IAIN Sultan Amai Gorontalo",
+        "type": "negeri"
+    },
+    {
+        "name": "Politeknik Kesehatan Kemenkes Gorontalo",
+        "type": "negeri"
+    },
+    {
+        "name": "Universitas Gorontalo",
+        "type": "swasta"
+    },
+    {
+        "name": "Universitas Ichsan Gorontalo",
+        "type": "swasta"
+    },
+    {
+        "name": "Universitas Muhammadiyah Gorontalo",
+        "type": "swasta"
+    },
+    {
+        "name": "Universitas Nahdlatul Ulama Gorontalo",
+        "type": "swasta"
+    },
+    {
+        "name": "Politeknik Gorontalo",
+        "type": "swasta"
+    },
+    {
+        "name": "STIA Bina Taruna Gorontalo",
+        "type": "swasta"
+    },
+    {
+        "name": "STITEK Bina Taruna Gorontalo",
+        "type": "swasta"
+    },
+    {
+        "name": "STMIK Ichsan Gorontalo",
+        "type": "swasta"
+    },
+    {
+        "name": "STIE Ichsan Gorontalo",
+        "type": "swasta"
+    },
+    {
+        "name": "STIMB Gorontalo",
+        "type": "swasta"
+    },
+    {
+        "name": "STIKES Bina Mandiri Gorontalo",
+        "type": "swasta"
+    },
+    {
+        "name": "STIKES Bakti Nusantara Gorontalo",
+        "type": "swasta"
+    },
+    {
+        "name": "Akademi Komputer Mall Cendikia Gorontalo",
+        "type": "swasta"
+    }
+]

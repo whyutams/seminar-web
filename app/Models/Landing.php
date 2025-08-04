@@ -10,6 +10,8 @@ class Landing extends Model
         'main_description',
         'schedule_description',
         'schedule_date',
+        'poster_description',
+        'poster_image',
         'hero_image',
         'updated_by'
     ];

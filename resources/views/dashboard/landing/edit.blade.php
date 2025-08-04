@@ -167,7 +167,7 @@
                             <div class="form-group mb-4">
                                 <label for="schedule_description">Main Description<span class="text-danger">*</span></label>
                                 <textarea id="summernote"
-                                    name="main_description">{{ $landing->main_description }}</textarea>
+                                    name="main_description">{{ old('main_description', $landing->main_description) }}</textarea>
                             </div>
 
                             <div class="form-group mb-4">
@@ -176,6 +176,30 @@
                                 <textarea class="form-control" id="schedule_description" name="schedule_description"
                                     rows="3"
                                     required>{{ old('schedule_description', $landing->schedule_description) }}</textarea>
+                            </div>
+
+                            <div class="form-group mb-4">
+                                <label for="schedule_date">Schedule Date<span class="text-danger">*</span></label>
+                                <input type="date" class="form-control" id="schedule_date" name="schedule_date"
+                                    value="{{ old('schedule_date', $landing->schedule_date) }}" required>
+                            </div>
+
+                            <div class="form-group mb-4">
+                                <label for="poster_description">Poster Description<span class="text-danger">*</span></label>
+                                <textarea id="summernote2" name="poster_description"
+                                    required>{{ old('poster_description', $landing->poster_description) }}</textarea>
+                            </div>
+
+                            <div class="form-group mb-4">
+                                <label for="poster_image">Poster Image<span class="text-danger">*</span></label>
+                                <input type="file" class="form-control" name="poster_image" required accept="image/*">
+
+                                @if ($landing->poster_image)
+                                    <div class="mt-3">
+                                        <img class="" src="{{ asset('storage/' . $landing->poster_image) }}" alt=""
+                                            height="150">
+                                    </div>
+                                @endif
                             </div>
 
                             <div class="form-group mb-4">

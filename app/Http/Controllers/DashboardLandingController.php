@@ -78,16 +78,17 @@ class DashboardLandingController extends Controller
             'main_description' => 'required',
             'schedule_description' => 'required|string',
             'schedule_date' => 'required|string',
-            'hero_image' => 'nullable|image',
+            'poster_description' => 'required|string',
+            'poster_image' => 'nullable|image',
         ]);
 
-        if ($request->hasFile('hero_image')) {
-            if ($landing->hero_image) {
-                Storage::disk('public')->delete($landing->hero_image);
+        if ($request->hasFile('poster_image')) {
+            if ($landing->poster_image) {
+                Storage::disk('public')->delete($landing->poster_image);
             }
 
-            $validated['hero_image'] = $request->file('hero_image')->store('landings', 'public');
-        }
+            $validated['poster_image'] = $request->file('poster_image')->store('landings', 'public');
+        } 
 
         $landing->update($validated);
 

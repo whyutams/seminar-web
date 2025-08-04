@@ -18,6 +18,8 @@ class LandingSeeder extends Seeder
             'main_description' => "<b>Main Description</b>",
             'schedule_description' => "Schedule Description",
             'schedule_date' => "2025-07-18",
+            'poster_description' => 'Poster Description',
+            'poster_image' => "",
             'hero_image' => "",
             'updated_by' => 1
         ]);

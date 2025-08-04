@@ -58,15 +58,15 @@
                                                 <i class="fas fa-edit"></i> Edit
                                             </a>
                                             @if($u->id !== auth()->id())
-                                            <form action="{{ route('dashboard.users.destroy', $u->id) }}" method="POST"
-                                                class="d-inline"
-                                                onsubmit="return confirm('Are you sure you want to delete this user?')">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button class="btn btn-sm btn-danger">
-                                                    <i class="fas fa-trash"></i> Delete
-                                                </button>
-                                            </form>
+                                                <form action="{{ route('dashboard.users.destroy', $u->id) }}" method="POST"
+                                                    class="d-inline"
+                                                    onsubmit="return confirm('Are you sure you want to delete this user?')">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-sm btn-danger">
+                                                        <i class="fas fa-trash"></i> Delete
+                                                    </button>
+                                                </form>
                                             @endif
                                         @else
                                             <span class="text-muted">-</span>
@@ -94,7 +94,11 @@
                             {{ $users->links() }}
                         </div>
 
-                        <div>
+                        <div class="d-flex">
+                            <button class="btn btn-success" onclick="downloadAndClose()" {{ $role_user_count > 0 ? '' : 'disabled' }}>
+                                <i class="fas fa-download"></i> Download Excel
+                            </button>
+                            <div class="mx-1"></div>
                             <a href="{{ route('dashboard.users.create') }}" class="btn btn-primary">
                                 <i class="fas fa-plus"></i> Add User
                             </a>
@@ -105,5 +109,14 @@
             </div>
         </div>
     </section>
+
+    <script>
+        function downloadAndClose() {
+            const w = window.open("{{ route('dashboard.users.export') }}", "_blank");
+            setTimeout(() => {
+                w.close();
+            }, 3000);
+        }
+    </script>
 
 @endsection

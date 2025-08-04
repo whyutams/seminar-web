@@ -18,6 +18,8 @@ return new class extends Migration
             $table->text("main_description");
             $table->string("schedule_description");
             $table->string("schedule_date");
+            $table->text("poster_description");
+            $table->string("poster_image");
             $table->string("hero_image");
             $table->unsignedBigInteger('updated_by')->nullable();  
             $table->timestamps();

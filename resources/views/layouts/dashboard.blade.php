@@ -259,19 +259,23 @@
     <script>
         $(function () {
             // Summernote
-            $('#summernote').summernote({
-                height: 350,
-                toolbar: [
-                    ['style', ['style']],
-                    ['font', ['bold', 'italic', 'underline']],
-                    ['fontname', ['fontname']],
-                    ['fontsize', ['fontsize']],
-                    ['color', ['color']],
-                    ['para', ['ol', 'ul', 'paragraph', 'height']],
-                    ['insert', ['link']],
-                    ['view', ['undo', 'redo', 'fullscreen']]
-                ]
-            })
+            const summernote_ids = ['summernote', 'summernote2'];
+
+            summernote_ids.forEach((id, i) => {
+                $(`#${id}`).summernote({
+                    height: 350,
+                    toolbar: [
+                        ['style', ['style']],
+                        ['font', ['bold', 'italic', 'underline']],
+                        ['fontname', ['fontname']],
+                        ['fontsize', ['fontsize']],
+                        ['color', ['color']],
+                        ['para', ['ol', 'ul', 'paragraph', 'height']],
+                        ['insert', ['link']],
+                        ['view', ['undo', 'redo', 'fullscreen']]
+                    ]
+                })
+            });
 
             // CodeMirror
             CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
