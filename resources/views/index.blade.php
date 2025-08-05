@@ -233,6 +233,37 @@
             </section>
         @endif
 
+<<<<<<<<< Temporary merge branch 1
+=========
+        <style>
+            @media min-width(768px) {
+                #poster div.poster-content {
+                    width: 100%;
+                }
+            }
+        </style>
+
+        <div class="w-100" id="poster_bg" style="background-color: var(--accent-color);">
+            <div class="row g-0">
+                <div class="col-md-6 px-0">
+                    <div class="bg-dark bg-opacity-25 h-100 d-flex justify-content-center align-items-center p-3">
+                        <img src="@if(!$landing->poster_image) https://dummyimage.com/800x1200 @else {{ asset('storage/' . $landing->poster_image) }} @endif"
+                            alt="" class="img-fluid rounded" style="max-height: 800px; object-fit: contain;"
+                            data-aos="zoom-in">
+                    </div>
+                </div>
+
+                <div class="col-md-6 text-white my-md-5 overflow-x-hidden">
+                    <div class="p-5" data-aos="fade-left">
+                        {!! $landing->poster_description !!}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+>>>>>>>>> Temporary merge branch 2
         <div class="event-schedule">
             <section id="event-schedule" class="section container px-3 px-md-0">
 
@@ -264,8 +295,8 @@
                     </div>
 
                     <div class="d-flex justify-content-center justify-content-md-start">
-                        <a href="{{ route("register") }}" class="btn-custom1 mt-5 mt-md-4 mx-md-0 mx-auto" target="_blank"
-                            data-aos="zoom-in" data-aos-delay="500">Registration Now</a>
+                        <a href="{{ route("register") }}" class="btn-custom1 mt-5 mt-md-4 mx-md-0 mx-auto"
+                            target="_blank" data-aos="zoom-in" data-aos-delay="500">Registration Now</a>
                     </div>
 
                 </div>
