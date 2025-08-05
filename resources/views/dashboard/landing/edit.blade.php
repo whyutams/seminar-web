@@ -155,13 +155,11 @@
                 </div>
             </div>
 
+            <form action="{{ route('dashboard.landing.update', $landing->id) }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
             <div class="card">
                 <div class="card-body table-responsive">
-                    <form action="{{ route('dashboard.landing.update', $landing->id) }}" method="POST"
-                        enctype="multipart/form-data">
-                        @csrf
-                        @method('PUT')
-
                         <div class="card-body">
 
                             <div class="form-group mb-4">
@@ -169,6 +167,8 @@
                                 <textarea id="summernote"
                                     name="main_description">{{ old('main_description', $landing->main_description) }}</textarea>
                             </div>
+
+                            <hr>
 
                             <div class="form-group mb-4">
                                 <label for="schedule_description">Schedule Description<span
@@ -183,16 +183,15 @@
                                 <input type="date" class="form-control" id="schedule_date" name="schedule_date"
                                     value="{{ old('schedule_date', $landing->schedule_date) }}" required>
                             </div>
+                        </div>
+                </div>
+            </div>
 
-                            <div class="form-group mb-4">
-                                <label for="poster_description">Poster Description<span class="text-danger">*</span></label>
-                                <textarea id="summernote2" name="poster_description"
-                                    required>{{ old('poster_description', $landing->poster_description) }}</textarea>
-                            </div>
-
+            <div class="card">
+                <div class="card-body table-responsive">
                             <div class="form-group mb-4">
                                 <label for="poster_image">Poster Image<span class="text-danger">*</span></label>
-                                <input type="file" class="form-control" name="poster_image" required accept="image/*">
+                                <input type="file" class="form-control" name="poster_image" accept="image/*">
 
                                 @if ($landing->poster_image)
                                     <div class="mt-3">
@@ -203,10 +202,16 @@
                             </div>
 
                             <div class="form-group mb-4">
+                                <label for="poster_description">Poster Description<span class="text-danger">*</span></label>
+                                <textarea id="summernote2" name="poster_description"
+                                    required>{{ old('poster_description', $landing->poster_description) }}</textarea>
+                            </div>
+<!-- 
+                            <div class="form-group mb-4">
                                 <label for="schedule_date">Schedule Date<span class="text-danger">*</span></label>
                                 <input type="date" class="form-control" id="schedule_date" name="schedule_date"
                                     value="{{ old('schedule_date', $landing->schedule_date) }}" required>
-                            </div>
+                            </div> -->
 
 
                         </div>
@@ -224,9 +229,9 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
+            </form>
         </div>
     </section>
 

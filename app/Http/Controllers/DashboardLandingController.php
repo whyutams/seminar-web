@@ -78,7 +78,7 @@ class DashboardLandingController extends Controller
             'main_description' => 'required',
             'schedule_description' => 'required|string',
             'schedule_date' => 'required|string',
-            'poster_description' => 'required|string',
+            'poster_description' => 'nullable|string',
             'poster_image' => 'nullable|image',
         ]);
 

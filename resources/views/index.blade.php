@@ -105,7 +105,7 @@
                             <p class="text-white" style="font-size: 30px !important;">SINTESIA</p>
                             <h2 class="text-white">Seminar Nasional Seni, Sains & Teknologi</h2>
                             <p>Universitas Negeri Gorontalo</p>
-                            <a href="{{ route("form") }}" class="btn-custom1 mt-4">Registration Form</a>
+                            <a href="" class="btn-custom1 mt-4">Registration Form</a>
                         <div class="col-lg-8">
                             <p class="text-white">Universitas Negeri Gorontalo - Indonesia</p>
                             <h2 class="text-white" style="font-size: 48px !important;">Seminar Nasional 2025</h2>
@@ -272,6 +272,31 @@
 
             </section>
         </div>
+
+        @if(isset($landing->poster_image))
+        <div class="event-info">
+            <section id="event-info" class="section container px-3 px-md-0">
+
+                <!-- Section Title -->
+                <div class="section-title" data-aos="fade-up">
+                    <h2>SINTESIA</h2>
+                </div><!-- End Section Title -->
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="{{ asset('storage/'.$landing->poster_image) }}" width="100%">
+                    </div>
+                    <div class="col-lg-6">
+                        <br><br><br><br>
+                        {!! $landing->poster_description !!}
+                        <!-- <h3><b>Seminar Nasional Seni, Sains & Teknologi</b></h3>
+                        <h5><i>Tema: "ART, SAINS & TECHNOLOGY"</i></h5><hr>
+                        <p style="text-align: justify;">SINTESIA 2025 merupakan seminar nasional tahunan yang diselenggarakan sebagai wadah strategis untuk mempertemukan para akademisi, peneliti, praktisi, dan mahasiswa dari berbagai disiplin ilmu, khususnya di bidang seni, sains, dan teknologi. Kegiatan ini dirancang tidak hanya sebagai ajang diseminasi hasil-hasil penelitian dan inovasi terbaru, tetapi juga sebagai ruang kolaboratif yang mendorong pertukaran ide, pemikiran kritis, serta pengembangan solusi atas berbagai tantangan kontemporer yang dihadapi masyarakat dan dunia industri. Melalui sesi presentasi, diskusi panel, dan publikasi ilmiah, SINTESIA 2025 memberikan peluang bagi peserta untuk membangun jejaring profesional lintas bidang dan lintas institusi, sekaligus memperkuat peran perguruan tinggi dalam mendorong kemajuan ilmu pengetahuan dan teknologi yang berkelanjutan serta berorientasi pada kebutuhan bangsa.</p> -->
+                    </div>
+                </div>
+            </section>
+        </div>
+        @endif
 
 
     </main>

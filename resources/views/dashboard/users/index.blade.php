@@ -119,12 +119,12 @@
     </section>
 
     <script>
-        function downloadAndClose() {
-            const w = window.open("{{ route('dashboard.users.export') }}", "_blank");
-            setTimeout(() => {
-                w.close();
-            }, 3000);
-        }
+        // function downloadAndClose() {
+        //     const w = window.open("{{ route('dashboard.users.export') }}", "_blank");
+        //     setTimeout(() => {
+        //         w.close();
+        //     }, 3000);
+        // }
     </script>
 
 @endsection
