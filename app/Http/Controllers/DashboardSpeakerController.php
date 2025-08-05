@@ -16,7 +16,8 @@ class DashboardSpeakerController extends Controller
      */
     public function index()
     {
-        $speakers = Speaker::with('creator')->latest()->paginate(10);
+        $speakers = Speaker::with('creator')->latest()->get();
+        
         return view('dashboard.speakers.index', compact('speakers'));
     }
 

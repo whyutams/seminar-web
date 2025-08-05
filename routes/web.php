@@ -39,7 +39,6 @@ Route::group(['middleware' => ['auth']], function () {
         ->group(function () {
             Route::get('', [DashboardController::class, "redirect"])->name("dashboard");
 
-            Route::get('users/export', [DashboardUserController::class, 'export'])->name('users.export');
             Route::resource('users', DashboardUserController::class)->names('users');
             Route::resource('speakers', DashboardSpeakerController::class)->names('speakers');
             Route::resource('landing', DashboardLandingController::class)->only(['update', 'index'])->names('landing');

@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Exports\UsersExport;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Maatwebsite\Excel\Facades\Excel;
 
 class DashboardUserController extends Controller
 {
@@ -17,10 +15,9 @@ class DashboardUserController extends Controller
      */
     public function index()
     {
-        $users = User::with('creator')->oldest()->paginate(10);
-        $role_user_count = User::where('role', 'user')->count();
+        $users = User::with('creator')->oldest()->get();
 
-        return view('dashboard.users.index', compact('users', 'role_user_count'));
+        return view('dashboard.users.index', compact('users'));
     }
 
     /**
@@ -142,8 +139,4 @@ class DashboardUserController extends Controller
         return redirect()->route('dashboard.users.index')->with('success', 'User has been successfully deleted.');
     }
 
-    public function export()
-    {
-        return Excel::download(new UsersExport, 'users.xlsx');
-    }
 }

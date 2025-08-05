@@ -181,18 +181,19 @@
 
                     @if ($keynote_speakers->count())
                         <div data-aos="fade-up">
-                            <div class="text-left px-md-3 mb-3">
+                            <div class="text-left mb-3">
                                 <h3>Keynote Speakers:</h3>
                             </div>
-                            <div class="row px-md-3 pt-1">
+                            <div class="row">
                                 @foreach ($keynote_speakers as $speaker)
                                     <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4">
                                         <div
-                                            class="icon-box d-flex flex-column justify-content-center align-items-center text-center shadow">
-                                            <img width="128" height="128" class="mb-4 rounded-circle"
+                                            class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
+                                            <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
                                                 src="{{ asset('storage/' . $speaker->photo) }}" alt="{{ $speaker->name }}" />
-                                            <h4>{{ $speaker->name }}</h4>
                                             <p>{{ $speaker->description }}</p>
+                                            <h4>{{ $speaker->name }}</h4>
+                                            <p><b>{{ $speaker->address }}</b></p>
                                         </div>
                                     </div>
                                 @endforeach
@@ -203,18 +204,19 @@
 
                     @if ($invited_speakers->count())
                         <div data-aos="fade-up mb-5">
-                            <div class="text-left px-md-3 mb-3">
+                            <div class="text-left mb-3">
                                 <h3>Invited Speakers:</h3>
                             </div>
-                            <div class="row px-md-3 pt-1">
+                            <div class="row">
                                 @foreach ($invited_speakers as $speaker)
                                     <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4">
                                         <div
-                                            class="icon-box d-flex flex-column justify-content-center align-items-center text-center shadow">
-                                            <img width="128" height="128" class="mb-4 rounded-circle"
+                                            class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
+                                            <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
                                                 src="{{ asset('storage/' . $speaker->photo) }}" alt="{{ $speaker->name }}" />
-                                            <h4>{{ $speaker->name }}</h4>
                                             <p>{{ $speaker->description }}</p>
+                                            <h4>{{ $speaker->name }}</h4>
+                                            <p><b>{{ $speaker->address }}</b></p>
                                         </div>
                                     </div>
                                 @endforeach
@@ -285,8 +287,8 @@
                     </div>
 
                     <div class="d-flex justify-content-center justify-content-md-start">
-                        <a href="{{ route("register") }}" class="btn-custom1 mt-5 mt-md-4 mx-md-0 mx-auto" target="_blank"
-                            data-aos="zoom-in" data-aos-delay="500">Registration Now</a>
+                        <a href="{{ route("register") }}" class="btn-custom1 mt-5 mt-md-4 mx-md-0 mx-auto"
+                            target="_blank" data-aos="zoom-in" data-aos-delay="500">Registration Now</a>
                     </div>
 
                 </div>
