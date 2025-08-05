@@ -128,7 +128,7 @@
                         text: '<i class="fas fa-download"></i>&nbsp; Export to Excel',
                         className: 'btn btn-success',
                         exportOptions: {
-                            columns: [0, 1, 2, 3, 5]
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 9]
                         }
                     }
                 ]
