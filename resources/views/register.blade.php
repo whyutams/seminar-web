@@ -26,9 +26,10 @@
         @csrf
 
         <div class="mb-3">
-        <label for="name" class="form-label">Name <small>(with titles if any)</small> <span class="text-danger">*</span></label>
-        <input type="text" id="name" name="name"
-          class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" required>
+        <label for="name" class="form-label">Name <small>(with titles if any)</small> <span
+          class="text-danger">*</span></label>
+        <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror"
+          value="{{ old('name') }}" required>
         @error('name')
       <div class="invalid-feedback">{{ $message }}</div>
       @enderror
@@ -48,7 +49,8 @@
         <div class="mb-3">
         <label for="institution" class="form-label">Institution <span class="text-danger">*</span></label>
         <select id="institution-dropdown" name="institution"
-          class="form-select @error('institution') is-invalid @enderror" disabled required>
+          class="form-select @error('institution') is-invalid @enderror select2 select2-primary w-100"
+          data-dropdown-css-class="select2-primary" disabled required>
           <option selected disabled value=""></option>
         </select>
         @error('institution')
@@ -58,8 +60,9 @@
 
         <div class="mb-3">
         <label for="country" class="form-label">Country <span class="text-danger">*</span></label>
-        <select id="country-dropdown" name="country" class="form-select @error('country') is-invalid @enderror"
-          disabled required>
+        <select id="country-dropdown" name="country"
+          class="form-select @error('country') is-invalid @enderror select2 select2-primary w-100"
+          data-dropdown-css-class="select2-primary" disabled required>
           <option selected disabled value=""></option>
         </select>
         @error('country')
@@ -95,7 +98,8 @@
         </div>
 
         <div class="mb-3">
-        <label for="password_confirmation" class="form-label">Password Confirmation <span class="text-danger">*</span></label>
+        <label for="password_confirmation" class="form-label">Password Confirmation <span
+          class="text-danger">*</span></label>
         <input type="password" id="password_confirmation" name="password_confirmation"
           class="form-control @error('password_confirmation') is-invalid @enderror"
           value="{{ old('password_confirmation') }}" required>
@@ -119,7 +123,13 @@
   </section>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function () { 
+    $('.select2').select2({
+      theme: 'bootstrap4',
+      dropdownCssClass: 'select2-bootstrap4',
+      width: '100%'
+    });
+
     fetch('{{ asset('json/universitas.json') }}')
       .then(res => res.json())
       .then(data => {
@@ -135,7 +145,7 @@
 
         select.appendChild(option);
 
-        if (i + 1 == data.length) select.disabled = false;
+        if (i + 1 == data.length) select.disabled = false;else if (u == data[0]) option.selected = true;
       });
       });
 

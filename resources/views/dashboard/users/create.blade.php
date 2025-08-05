@@ -64,7 +64,8 @@
                         <div class="form-group">
                             <label for="institution">Institution <span class="text-danger">*</span></label>
                             <select id="institution-dropdown" name="institution"
-                                class="form-control @error('institution') is-invalid @enderror" disabled required>
+                                class="form-control @error('institution') is-invalid @enderror select2 select2-primary w-100"
+                                data-dropdown-css-class="select2-primary" disabled required>
                                 <option selected disabled value="">-- Select Institution --</option>
                             </select>
                         </div>
@@ -72,7 +73,8 @@
                         <div class="form-group">
                             <label for="country">Country <span class="text-danger">*</span></label>
                             <select id="country-dropdown" name="country"
-                                class="form-control @error('country') is-invalid @enderror" disabled required>
+                                class="form-control @error('country') is-invalid @enderror select2 select2-primary w-100"
+                                data-dropdown-css-class="select2-primary" disabled required>
                                 <option selected disabled value="">-- Select country --</option>
                             </select>
                         </div>
@@ -126,6 +128,12 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            $('.select2').select2({
+                theme: 'bootstrap4',
+                dropdownCssClass: 'select2-bootstrap4',
+                width: '100%'
+            });
+
             fetch('{{ asset('json/universitas.json') }}')
                 .then(res => res.json())
                 .then(data => {
@@ -141,7 +149,7 @@
 
                         select.appendChild(option);
 
-                        if (i + 1 == data.length) select.disabled = false;
+                        if (i + 1 == data.length) select.disabled = false; else if (u == data[0]) option.selected = true;
                     });
                 });
 

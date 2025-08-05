@@ -100,7 +100,7 @@
             <div id="heroCarousel" class="carousel slide dark-background" data-bs-ride="carousel">
 
                 <div class="content container text-center" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="row justify-content-center">
+                    <div class="row d-flex justify-content-center mx-auto">
                         <div class="col-lg-12">
                             <p class="text-white" style="font-size: 30px !important;">SINTESIA</p>
                             <h2 class="text-white">Seminar Nasional Seni, Sains & Teknologi</h2>
@@ -269,29 +269,29 @@
             </section>
         </div>
 
-        @if(isset($landing->poster_image))
-        <div class="event-info">
-            <section id="event-info" class="section container px-3 px-md-0">
+        @if($landing->poster_image)
+            <div class="event-info">
+                <section id="event-info" class="section container px-3 px-md-0">
 
-                <!-- Section Title -->
-                <div class="section-title" data-aos="fade-up">
-                    <h2>SINTESIA</h2>
-                </div><!-- End Section Title -->
+                    <!-- Section Title -->
+                    <div class="section-title" data-aos="fade-up">
+                        <h2>SINTESIA</h2>
+                    </div><!-- End Section Title -->
 
-                <div class="row">
-                    <div class="col-lg-6">
-                        <img src="{{ asset('storage/'.$landing->poster_image) }}" width="100%">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <img src="{{ asset('storage/' . $landing->poster_image) }}" width="100%">
+                        </div>
+                        <div class="col-lg-6">
+                            <br><br><br><br>
+                            {!! $landing->poster_description !!}
+                            <!-- <h3><b>Seminar Nasional Seni, Sains & Teknologi</b></h3>
+                                <h5><i>Tema: "ART, SAINS & TECHNOLOGY"</i></h5><hr>
+                                <p style="text-align: justify;">SINTESIA 2025 merupakan seminar nasional tahunan yang diselenggarakan sebagai wadah strategis untuk mempertemukan para akademisi, peneliti, praktisi, dan mahasiswa dari berbagai disiplin ilmu, khususnya di bidang seni, sains, dan teknologi. Kegiatan ini dirancang tidak hanya sebagai ajang diseminasi hasil-hasil penelitian dan inovasi terbaru, tetapi juga sebagai ruang kolaboratif yang mendorong pertukaran ide, pemikiran kritis, serta pengembangan solusi atas berbagai tantangan kontemporer yang dihadapi masyarakat dan dunia industri. Melalui sesi presentasi, diskusi panel, dan publikasi ilmiah, SINTESIA 2025 memberikan peluang bagi peserta untuk membangun jejaring profesional lintas bidang dan lintas institusi, sekaligus memperkuat peran perguruan tinggi dalam mendorong kemajuan ilmu pengetahuan dan teknologi yang berkelanjutan serta berorientasi pada kebutuhan bangsa.</p> -->
+                        </div>
                     </div>
-                    <div class="col-lg-6">
-                        <br><br><br><br>
-                        {!! $landing->poster_description !!}
-                        <!-- <h3><b>Seminar Nasional Seni, Sains & Teknologi</b></h3>
-                        <h5><i>Tema: "ART, SAINS & TECHNOLOGY"</i></h5><hr>
-                        <p style="text-align: justify;">SINTESIA 2025 merupakan seminar nasional tahunan yang diselenggarakan sebagai wadah strategis untuk mempertemukan para akademisi, peneliti, praktisi, dan mahasiswa dari berbagai disiplin ilmu, khususnya di bidang seni, sains, dan teknologi. Kegiatan ini dirancang tidak hanya sebagai ajang diseminasi hasil-hasil penelitian dan inovasi terbaru, tetapi juga sebagai ruang kolaboratif yang mendorong pertukaran ide, pemikiran kritis, serta pengembangan solusi atas berbagai tantangan kontemporer yang dihadapi masyarakat dan dunia industri. Melalui sesi presentasi, diskusi panel, dan publikasi ilmiah, SINTESIA 2025 memberikan peluang bagi peserta untuk membangun jejaring profesional lintas bidang dan lintas institusi, sekaligus memperkuat peran perguruan tinggi dalam mendorong kemajuan ilmu pengetahuan dan teknologi yang berkelanjutan serta berorientasi pada kebutuhan bangsa.</p> -->
-                    </div>
-                </div>
-            </section>
-        </div>
+                </section>
+            </div>
         @endif
 
 
