@@ -48,7 +48,7 @@
         <section class="section container bg-white rounded shadow my-4 p-4"> 
             <div class="px-4">
                 <div class="d-flex justify-content-between">
-                    <h3 class="my-auto">Selamat Datang, {{ Auth::user()->name }} !</h3>
+                    <h3 class="my-auto">Welcome, {{ Auth::user()->name }} !</h3>
                     <div class="d-flex justify-content-center align-items-center text-center"><i
                             class="bi bi-person-fill" style="font-size: 40px; color: var(--accent-color);"></i></div>
                 </div>

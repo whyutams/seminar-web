@@ -29,11 +29,9 @@ Route::get('/', [LandingController::class, "index"])->name("index");
 Route::get('/register', [RegisterController::class, "index"])->name("register");
 Route::get('/login', [LoginController::class, "index"])->name("login");
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-Route::get('/form', [RegistrationController::class, 'index'])->name("form");
 
 Route::post('/login', [LoginController::class, "login"]);
 Route::post('/register', [RegisterController::class, 'store']);
-Route::post('/form', [RegistrationController::class, 'store'])->name('form.submit');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::prefix('dashboard')
@@ -44,8 +42,6 @@ Route::group(['middleware' => ['auth']], function () {
             Route::get('users/export', [DashboardUserController::class, 'export'])->name('users.export');
             Route::resource('users', DashboardUserController::class)->names('users');
             Route::resource('speakers', DashboardSpeakerController::class)->names('speakers');
-            Route::get('registrations/export', [DashboardRegistrationController::class, 'export'])->name('registrations.export');
-            Route::resource('registrations', DashboardRegistrationController::class)->names('registrations')->parameters(['registrations' => 'regist']);
             Route::resource('landing', DashboardLandingController::class)->only(['update', 'index'])->names('landing');
             Route::resource('hero', DashboardHeroController::class)->only(['store', 'destroy'])->names('hero');
 

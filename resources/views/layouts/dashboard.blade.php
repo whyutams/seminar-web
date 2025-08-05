@@ -135,15 +135,7 @@
                                     Speakers
                                 </p>
                             </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url("dashboard/registrations") }}" class="nav-link">
-                                <i class="nav-icon bi bi-clipboard-data-fill"></i>
-                                <p>
-                                    Registrations
-                                </p>
-                            </a>
-                        </li>
+                        </li> 
 
                     </ul>
                 </nav>

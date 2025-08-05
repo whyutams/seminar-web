@@ -106,6 +106,19 @@
                             <h2 class="text-white">Seminar Nasional Seni, Sains & Teknologi</h2>
                             <p>Universitas Negeri Gorontalo</p>
                             <a href="{{ route("form") }}" class="btn-custom1 mt-4">Registration Form</a>
+                        <div class="col-lg-8">
+                            <p class="text-white">Universitas Negeri Gorontalo - Indonesia</p>
+                            <h2 class="text-white" style="font-size: 48px !important;">Seminar Nasional 2025</h2>
+                            @auth
+                            @else
+                                <a href="{{ route("register") }}" class="btn-custom1 mt-4">Registration Form</a>
+                            @endauth
+                            <div class="d-flex justify-content-center mt-4">
+                                <a href="#" class="btn btn-success"><i class="bi bi-download"></i>&nbsp; Download
+                                    Word</a>
+                                <a href="#" class="btn btn-success ms-2"><i class="bi bi-download"></i>&nbsp; Download
+                                    PPT</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -251,7 +264,7 @@
                     </div>
 
                     <div class="d-flex justify-content-center justify-content-md-start">
-                        <a href="{{ route("form") }}" class="btn-custom1 mt-5 mt-md-4 mx-md-0 mx-auto" target="_blank"
+                        <a href="{{ route("register") }}" class="btn-custom1 mt-5 mt-md-4 mx-md-0 mx-auto" target="_blank"
                             data-aos="zoom-in" data-aos-delay="500">Registration Now</a>
                     </div>
 
