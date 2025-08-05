@@ -14,10 +14,8 @@
                         <li><a href="/#speakers">Speakers</a></li>
                         <li><a href="/#event-schedule">Event Schedule</a></li>
                         @if(isset($landing->poster_image))<li><a href="/#event-info">About</a></li>@endif
-<<<<<<< Updated upstream
-=======
+                        @if(isset($landing->poster_image))<li><a href="/#event-info">About</a></li>@endif
                         <li><a href="{{ route("form") }}" target="_blank">Registration Form</a></li>
->>>>>>> Stashed changes
                         <li><a class="btn-custom1 mx-2" href="{{ url("/dashboard") }}">Dashboard</a></li>
                     </ul>
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
