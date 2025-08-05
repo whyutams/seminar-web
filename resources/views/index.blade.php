@@ -105,10 +105,6 @@
                             <p class="text-white">Universitas Negeri Gorontalo - Indonesia</p>
                             <h2 class="text-white" style="font-size: 48px !important;">Seminar Nasional 2025</h2>
                             <a href="{{ route("form") }}" class="btn-custom1 mt-4">Registration Form</a>
-                            <div class="d-flex justify-content-center mt-4">
-                                <a href="#" class="btn btn-success"><i class="bi bi-download"></i>&nbsp; Download Word</a>
-                                <a href="#" class="btn btn-success ms-2"><i class="bi bi-download"></i>&nbsp; Download PPT</a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -173,43 +169,48 @@
                     <div class="section-title text-center mb-2">
                         <h2>Speakers</h2>
                     </div>
-
+                    <center>
                     @if ($keynote_speakers->count())
                         <div data-aos="fade-up">
-                            <div class="text-left px-md-3 mb-3">
+                            <div class="text-left mb-3">
                                 <h3>Keynote Speakers:</h3>
                             </div>
-                            <div class="row px-md-3 pt-1">
+                            
+                            <div class="row">
                                 @foreach ($keynote_speakers as $speaker)
                                     <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4">
                                         <div
-                                            class="icon-box d-flex flex-column justify-content-center align-items-center text-center shadow">
-                                            <img width="128" height="128" class="mb-4 rounded-circle"
+                                            class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
+                                            <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
                                                 src="{{ asset('storage/' . $speaker->photo) }}" alt="{{ $speaker->name }}" />
-                                            <h4>{{ $speaker->name }}</h4>
                                             <p>{{ $speaker->description }}</p>
+                                            <h4>{{ $speaker->name }}</h4>
+                                            <p><b>{{ $speaker->address }}</b></p>
                                         </div>
                                     </div>
                                 @endforeach
                             </div>
+
                         </div>
                     @endif
+                    </center>
 
 
                     @if ($invited_speakers->count())
                         <div data-aos="fade-up mb-5">
-                            <div class="text-left px-md-3 mb-3">
+                            <div class="text-left mb-3">
                                 <h3>Invited Speakers:</h3>
                             </div>
-                            <div class="row px-md-3 pt-1">
+                            <div class="row">
                                 @foreach ($invited_speakers as $speaker)
                                     <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4">
                                         <div
-                                            class="icon-box d-flex flex-column justify-content-center align-items-center text-center shadow">
-                                            <img width="128" height="128" class="mb-4 rounded-circle"
+                                            class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
+                                            <img width="128" height="128" class="mb-4 rounded-circle shadow-4-strong"
                                                 src="{{ asset('storage/' . $speaker->photo) }}" alt="{{ $speaker->name }}" />
-                                            <h4>{{ $speaker->name }}</h4>
                                             <p>{{ $speaker->description }}</p>
+                                            <h4>{{ $speaker->name }}</h4>
+                                            <p><b>{{ $speaker->address }}</b></p>
                                         </div>
                                     </div>
                                 @endforeach
@@ -220,33 +221,6 @@
                 </div>
             </section>
         @endif
-
-        <style>
-            @media min-width(768px) {
-                #poster div.poster-content {
-                    width: 100%;
-                }
-            }
-        </style>
-
-        <div class="w-100" id="poster_bg" style="background-color: var(--accent-color);">
-            <div class="row g-0">
-                <div class="col-md-6 px-0">
-                    <div class="bg-dark bg-opacity-25 h-100 d-flex justify-content-center align-items-center p-3">
-                        <img src="@if(!$landing->poster_image) https://dummyimage.com/800x1200 @else {{ asset('storage/' . $landing->poster_image) }} @endif" alt="" class="img-fluid rounded"
-                            style="max-height: 800px; object-fit: contain;" data-aos="zoom-in">
-                    </div>
-                </div>
-
-                <div class="col-md-6 text-white my-md-5 overflow-x-hidden">
-                    <div class="p-5" data-aos="fade-left">
-                        {!! $landing->poster_description !!}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
 
         <div class="event-schedule">
             <section id="event-schedule" class="section container px-3 px-md-0">
