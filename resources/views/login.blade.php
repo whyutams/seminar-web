@@ -18,7 +18,7 @@
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
+                        <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
                         <input type="email" id="email" name="email"
                             class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}"
                             required autofocus>
@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
+                        <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
                         <input type="password" id="password" name="password"
                             class="form-control @error('password') is-invalid @enderror" required>
                         @error('password')

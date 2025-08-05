@@ -35,11 +35,15 @@
                             <tr>
                                 <th width="5%">#</th>
                                 <th>Name</th>
+                                <th>Country</th>
+                                <th>Institution</th>
+                                <th>Department</th>
                                 <th>Email</th>
+                                <th>Phone</th>
                                 <th>Role</th>
                                 <th>Added By</th>
                                 <th>Created At</th>
-                                <th width="20%">Actions</th>
+                                <th width="15%">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -47,7 +51,11 @@
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $u->name }}</td>
+                                    <td>{{ $u->country ?? '-'}}</td>
+                                    <td>{{ $u->institution ?? '-' }}</td>
+                                    <td>{{ $u->department ?? '-' }}</td>
                                     <td>{{ $u->email }}</td>
+                                    <td>{{ $u->phone ?? '-'}}</td>
                                     <td><span class="badge bg-info">{{ ucfirst($u->role) }}</span></td>
                                     <td>{{ $u->creator?->name ?? '-' }}</td>
                                     <td>{{ $u->created_at->format('d M Y') }}</td>

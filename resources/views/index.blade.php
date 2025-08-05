@@ -104,10 +104,15 @@
                         <div class="col-lg-8">
                             <p class="text-white">Universitas Negeri Gorontalo - Indonesia</p>
                             <h2 class="text-white" style="font-size: 48px !important;">Seminar Nasional 2025</h2>
-                            <a href="{{ route("form") }}" class="btn-custom1 mt-4">Registration Form</a>
+                            @auth
+                            @else
+                                <a href="{{ route("register") }}" class="btn-custom1 mt-4">Registration Form</a>
+                            @endauth
                             <div class="d-flex justify-content-center mt-4">
-                                <a href="#" class="btn btn-success"><i class="bi bi-download"></i>&nbsp; Download Word</a>
-                                <a href="#" class="btn btn-success ms-2"><i class="bi bi-download"></i>&nbsp; Download PPT</a>
+                                <a href="#" class="btn btn-success"><i class="bi bi-download"></i>&nbsp; Download
+                                    Word</a>
+                                <a href="#" class="btn btn-success ms-2"><i class="bi bi-download"></i>&nbsp; Download
+                                    PPT</a>
                             </div>
                         </div>
                     </div>
@@ -233,8 +238,9 @@
             <div class="row g-0">
                 <div class="col-md-6 px-0">
                     <div class="bg-dark bg-opacity-25 h-100 d-flex justify-content-center align-items-center p-3">
-                        <img src="@if(!$landing->poster_image) https://dummyimage.com/800x1200 @else {{ asset('storage/' . $landing->poster_image) }} @endif" alt="" class="img-fluid rounded"
-                            style="max-height: 800px; object-fit: contain;" data-aos="zoom-in">
+                        <img src="@if(!$landing->poster_image) https://dummyimage.com/800x1200 @else {{ asset('storage/' . $landing->poster_image) }} @endif"
+                            alt="" class="img-fluid rounded" style="max-height: 800px; object-fit: contain;"
+                            data-aos="zoom-in">
                     </div>
                 </div>
 
@@ -279,7 +285,7 @@
                     </div>
 
                     <div class="d-flex justify-content-center justify-content-md-start">
-                        <a href="{{ route("form") }}" class="btn-custom1 mt-5 mt-md-4 mx-md-0 mx-auto" target="_blank"
+                        <a href="{{ route("register") }}" class="btn-custom1 mt-5 mt-md-4 mx-md-0 mx-auto" target="_blank"
                             data-aos="zoom-in" data-aos-delay="500">Registration Now</a>
                     </div>
 

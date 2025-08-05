@@ -22,6 +22,8 @@ class UserSeeder extends Seeder
                 'name' => 'Admin',
                 'email' => 'admin@gmail.com',
                 'password' => 'admin123',
+                'institution' => 'Universitas Negeri Gorontalo',
+                'country' => 'Indoneisa',
                 'role' => 'superadmin',
                 'added_by' => null
             ]
@@ -34,6 +36,8 @@ class UserSeeder extends Seeder
                     'name' => $user['name'],
                     'password' => Hash::make($user['password']),
                     'role' => $user['role'],
+                    'institution' => $user['institution'],
+                    'country' => $user['country'],
                     'added_by' => $user['added_by'],
                 ]
             );

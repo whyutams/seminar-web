@@ -54,6 +54,36 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="department">Department / Faculty <span class="text-danger">*</span></label>
+                            <select id="department-dropdown" name="department"
+                                class="form-control @error('department') is-invalid @enderror" disabled required>
+                                <option selected disabled value="">-- Select Department / Faculty --</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="institution">Institution <span class="text-danger">*</span></label>
+                            <select id="institution-dropdown" name="institution"
+                                class="form-control @error('institution') is-invalid @enderror" disabled required>
+                                <option selected disabled value="">-- Select Institution --</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="country">Country <span class="text-danger">*</span></label>
+                            <select id="country-dropdown" name="country"
+                                class="form-control @error('country') is-invalid @enderror" disabled required>
+                                <option selected disabled value="">-- Select country --</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="text-danger">*</span></label>
+                            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter phone"
+                                value="{{ old('phone') }}" required>
+                        </div>
+
+                        <div class="form-group">
                             <label for="email">Email <span class="text-danger">*</span></label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="Enter email"
                                 value="{{ old('email') }}" required>
@@ -93,4 +123,65 @@
             </div>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('{{ asset('json/universitas.json') }}')
+                .then(res => res.json())
+                .then(data => {
+                    const select = document.getElementById('institution-dropdown');
+                    const oldValue = "{{ old('universitas') }}";
+
+                    data.forEach((u, i) => {
+                        const option = document.createElement('option');
+                        option.value = u.name;
+                        option.textContent = u.name;
+
+                        if (u.name == oldValue) option.selected = true;
+
+                        select.appendChild(option);
+
+                        if (i + 1 == data.length) select.disabled = false;
+                    });
+                });
+
+            fetch('{{ asset('json/country.json') }}')
+                .then(res => res.json())
+                .then(data => {
+                    const select = document.getElementById('country-dropdown');
+                    const oldValue = "{{ old('country') }}";
+
+                    data.forEach((c, i) => {
+                        const option = document.createElement('option');
+                        option.value = c;
+                        option.textContent = c;
+
+                        if (c == oldValue) option.selected = true;
+
+                        select.appendChild(option);
+
+                        if (i + 1 == data.length) select.disabled = false; else if (c == data[0]) option.selected = true;
+                    });
+                });
+
+            fetch('{{ asset('json/bidang.json') }}')
+                .then(res => res.json())
+                .then(data => {
+                    const select = document.getElementById('department-dropdown');
+                    const oldValue = "{{ old('department') }}";
+
+                    data.forEach((c, i) => {
+                        const option = document.createElement('option');
+                        option.value = c;
+                        option.textContent = c;
+
+                        if (c == oldValue) option.selected = true;
+
+                        select.appendChild(option);
+
+                        if (i + 1 == data.length) select.disabled = false;
+                    });
+                });
+        });
+    </script>
 @endsection

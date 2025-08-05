@@ -62,5 +62,9 @@
     {
         "name": "Akademi Komputer Mall Cendikia Gorontalo",
         "type": "swasta"
+    },
+    {
+        "name": "Other",
+        "type": ""
     }
 ]

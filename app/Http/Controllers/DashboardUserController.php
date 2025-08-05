@@ -44,6 +44,10 @@ class DashboardUserController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
+            'department' => 'required|string|max:255',
+            'institution' => 'required|string|max:255',
+            'country' => 'required|string|max:255',
+            'phone' => 'required|max:20',
             'password' => 'required|string|min:6',
             'role' => 'required|in:admin,user',
         ]);
@@ -51,6 +55,10 @@ class DashboardUserController extends Controller
         User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'department' => $request->department,
+            'institution' => $request->institution,
+            'country' => $request->country,
+            'phone' => $request->phone,
             'password' => Hash::make($request->password),
             'role' => $request->role,
             'added_by' => auth()->id(),
@@ -98,6 +106,10 @@ class DashboardUserController extends Controller
         $validated = $request->validate([
             'name' => 'required|string',
             'email' => "required|email|unique:users,email,{$user->id}",
+            'department' => 'required|string|max:255',
+            'institution' => 'required|string|max:255',
+            'country' => 'required|string|max:255',
+            'phone' => 'required|max:20',
             'role' => 'required|in:user,admin,superadmin',
             'password' => 'nullable|string|min:6',
         ]);

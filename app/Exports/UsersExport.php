@@ -24,7 +24,11 @@ class UsersExport implements FromCollection, WithHeadings, WithMapping, WithColu
     {
         return [
             'Name',
+            'Country',
+            'Institution',
+            'Department',
             'Email',
+            'Phone',
             'Created At',
         ];
     }
@@ -33,7 +37,11 @@ class UsersExport implements FromCollection, WithHeadings, WithMapping, WithColu
     {
         return [
             $reg->name,
+            $reg->country,
+            $reg->institution,
+            $reg->department,
             $reg->email, 
+            $reg->phone,
             Carbon::parse($reg->created_at)->format('d-m-Y'),  
         ];
     }
@@ -41,7 +49,7 @@ class UsersExport implements FromCollection, WithHeadings, WithMapping, WithColu
     public function columnFormats(): array
     {
         return [
-            'C' => NumberFormat::FORMAT_TEXT,  
+            'G' => NumberFormat::FORMAT_TEXT,  
         ];
     }
 }
