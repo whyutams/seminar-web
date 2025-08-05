@@ -203,8 +203,7 @@
 
                             <div class="form-group mb-4">
                                 <label for="poster_description">Poster Description<span class="text-danger">*</span></label>
-                                <textarea id="summernote2" name="poster_description"
-                                    required>{{ old('poster_description', $landing->poster_description) }}</textarea>
+                                <textarea id="summernote2" name="poster_description">{{ old('poster_description', $landing->poster_description) }}</textarea>
                             </div>
 <!-- 
                             <div class="form-group mb-4">

@@ -105,20 +105,16 @@
                             <p class="text-white" style="font-size: 30px !important;">SINTESIA</p>
                             <h2 class="text-white">Seminar Nasional Seni, Sains & Teknologi</h2>
                             <p>Universitas Negeri Gorontalo</p>
-                            <a href="" class="btn-custom1 mt-4">Registration Form</a>
-                        <div class="col-lg-8">
-                            <p class="text-white">Universitas Negeri Gorontalo - Indonesia</p>
-                            <h2 class="text-white" style="font-size: 48px !important;">Seminar Nasional 2025</h2>
                             @auth
                             @else
                                 <a href="{{ route("register") }}" class="btn-custom1 mt-4">Registration Form</a>
                             @endauth
-                            <div class="d-flex justify-content-center mt-4">
+                            {{-- <div class="d-flex justify-content-center mt-4">
                                 <a href="#" class="btn btn-success"><i class="bi bi-download"></i>&nbsp; Download
                                     Word</a>
                                 <a href="#" class="btn btn-success ms-2"><i class="bi bi-download"></i>&nbsp; Download
                                     PPT</a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -187,7 +183,7 @@
                     @if ($keynote_speakers->count())
                         <div data-aos="fade-up">
                             <div class="text-left mb-3">
-                                <h3>Keynote Speakers:</h3>
+                                <!-- <h3>Keynote Speakers:</h3> -->
                             </div>
                             <div class="row">
                                 @foreach ($keynote_speakers as $speaker)

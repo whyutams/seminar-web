@@ -52,9 +52,13 @@
                     <div class="d-flex justify-content-center align-items-center text-center"><i
                             class="bi bi-person-fill" style="font-size: 40px; color: var(--accent-color);"></i></div>
                 </div>
-                <p>Please join the WhatsApp group below to receive information about the seminar.</p>
-                <a href="#" class="btn btn-success"><i class="bi bi-whatsapp"></i>&nbsp;Join Group</a>
-                <a href="#" class="btn btn-danger"><i class="bi bi-whatsapp"></i>&nbsp;ojs</a>
+                <p>Silahkan Bergabung di Group WA untuk mendapatkan informasi terbaru.</p>
+                <a href="#" class="btn btn-success"><i class="bi bi-whatsapp"></i>&nbsp;Join Group</a><br><br>
+                <p>Untuk Upload Artikel Silahkan Klik Ke OJS</p>
+                <a href="#" class="btn btn-danger"></i>&nbsp;Ke OJS</a><br><br>
+                <p>Silahkan Download Template Artikel dan PPT dibawah ini</p>
+                <a href="#" class="btn btn-primary"><i class="bi bi-download"></i>&nbsp; Download Template Prosiding</a>
+                <a href="#" class="btn btn-warning ms-2"><i class="bi bi-download"></i>&nbsp; Download Template PPT</a>
             </div>
 
             <div class="rundown mt-5">
