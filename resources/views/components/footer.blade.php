@@ -6,8 +6,8 @@
                 <a href="index.html" class="logo d-flex align-items-center">
                     <span class="sitename">Seminar</span>
                 </a>
-                <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita
-                    valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+                <p style="font-size: 20px;">FT-Universitas Negeri Gorontalo</p>
+                <p>Jl. Prof. Dr.Ing. B.J. Habibie, Moutong – Tilongkabila Kab Bone Bolango – Provinsi Gorontalo 96554 Indonesia</p>
                 <div class="social-links d-flex mt-4">
                     <a href=""><i class="bi bi-twitter-x"></i></a>
                     <a href=""><i class="bi bi-facebook"></i></a>
@@ -19,23 +19,21 @@
             <div class="col-lg-2 col-6 footer-links">
                 <h4>Useful Links</h4>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Terms of service</a></li>
-                    <li><a href="#">Privacy policy</a></li>
+                    <li class="mb-2"><a href="https://www.ung.ac.id/" target="_blank">Universitas Negeri Gorontalo</a></li>
+                    <li class="mb-2"><a href="https://ft.ung.ac.id" target="_blank">Fakultas Teknik</a></li>
+                    <li class="mb-2"><a href="https://spmb.ung.ac.id" target="_blank">SPMB UNG</a></li>
                 </ul>
             </div>
 
             <div class="col-lg-2 col-6 footer-links">
-                <h4>Our Services</h4>
+                <!-- <h4>Our Services</h4>
                 <ul>
                     <li><a href="#">Web Design</a></li>
                     <li><a href="#">Web Development</a></li>
                     <li><a href="#">Product Management</a></li>
                     <li><a href="#">Marketing</a></li>
                     <li><a href="#">Graphic Design</a></li>
-                </ul>
+                </ul> -->
             </div>
 
             <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
@@ -44,7 +42,7 @@
                 <p>Moutong, Kec. Tilongkabila, Kabupaten Bone Bolango, Gorontalo</p>
                 <p>Indonseia</p>
                 <p class="mt-4"><strong>Phone:</strong> <span>6282 xxxx xxxx</span></p>
-                <p><strong>Email:</strong> <span>teknik@ung.ac.id</span></p>
+                <p><strong>Email:</strong> <span>ft@ung.ac.id</span></p>
             </div>
 
         </div>

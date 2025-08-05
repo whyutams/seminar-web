@@ -101,9 +101,10 @@
 
                 <div class="content container text-center" data-aos="zoom-in" data-aos-delay="100">
                     <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <p class="text-white">Universitas Negeri Gorontalo - Indonesia</p>
-                            <h2 class="text-white" style="font-size: 48px !important;">Seminar Nasional 2025</h2>
+                        <div class="col-lg-12">
+                            <p class="text-white" style="font-size: 30px !important;">SINTESIA</p>
+                            <h2 class="text-white">Seminar Nasional Seni, Sains & Teknologi</h2>
+                            <p>Universitas Negeri Gorontalo</p>
                             <a href="{{ route("form") }}" class="btn-custom1 mt-4">Registration Form</a>
                         </div>
                     </div>
@@ -169,13 +170,12 @@
                     <div class="section-title text-center mb-2">
                         <h2>Speakers</h2>
                     </div>
-                    <center>
+
                     @if ($keynote_speakers->count())
                         <div data-aos="fade-up">
                             <div class="text-left mb-3">
                                 <h3>Keynote Speakers:</h3>
                             </div>
-                            
                             <div class="row">
                                 @foreach ($keynote_speakers as $speaker)
                                     <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4">
@@ -190,10 +190,8 @@
                                     </div>
                                 @endforeach
                             </div>
-
                         </div>
                     @endif
-                    </center>
 
 
                     @if ($invited_speakers->count())
