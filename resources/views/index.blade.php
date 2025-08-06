@@ -185,7 +185,7 @@
                             <div class="text-left mb-3">
                                 <!-- <h3>Keynote Speakers:</h3> -->
                             </div>
-                            <div class="row">
+                            <div class="row justify-content-center">
                                 @foreach ($keynote_speakers as $speaker)
                                     <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4">
                                         <div
@@ -208,7 +208,7 @@
                             <div class="text-left mb-3">
                                 <h3>Invited Speakers:</h3>
                             </div>
-                            <div class="row">
+                            <div class="row justify-content-center">
                                 @foreach ($invited_speakers as $speaker)
                                     <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4">
                                         <div

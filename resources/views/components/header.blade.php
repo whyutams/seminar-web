@@ -1,8 +1,8 @@
 <header id="header" class="header d-flex align-items-center sticky-top shadow-sm">
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
-        <a href="/#" class="logo d-flex align-items-center me-auto me-xl-0">-
-            <img src="{{ asset('img/ung-icon1.png') }}" alt="">
+        <a href="/#" class="logo d-flex align-items-center me-auto me-xl-0">
+            <img src="{{ asset('img/Logo Vertikal.png') }}" alt="">
             <h1 class="sitename" style="color: #0c5f9a;">FT-UNG</h1>
         </a>
 

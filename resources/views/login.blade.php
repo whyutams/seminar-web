@@ -42,7 +42,7 @@
 
                     <div class="mt-4 text-center d-flex justify-content-between">
                         <a href="{{ url('/') }}">Back to Home</a>
-                        <a href="{{ url('/register') }}">Register</a>
+                        {{-- <a href="{{ url('/register') }}">Register</a> --}}
                     </div>
                 </form>
             </div>

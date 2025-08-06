@@ -36,7 +36,7 @@
         </div>
 
         <div class="mb-3">
-        <label for="department" class="form-label">Department / Faculty <span class="text-danger">*</span></label>
+        <label for="department" class="form-label">Bidang/Sub Tema Yang Ingin Diikuti<span class="text-danger">*</span></label>
         <select id="department-dropdown" name="department"
           class="form-select @error('department') is-invalid @enderror" disabled required>
           <option selected disabled value=""></option>
