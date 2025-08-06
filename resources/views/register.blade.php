@@ -138,10 +138,10 @@
 
       data.forEach((u, i) => {
         const option = document.createElement('option');
-        option.value = u.name;
-        option.textContent = u.name;
+        option.value = u.nama;
+        option.textContent = u.nama;
 
-        if (u.name == oldValue) option.selected = true;
+        if (u.nama == oldValue) option.selected = true;
 
         select.appendChild(option);
 
