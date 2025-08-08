@@ -231,7 +231,6 @@
 
         <div class="event-schedule">
             <section id="event-schedule" class="section container px-3 px-md-0">
-
                 <!-- Section Title -->
                 <div class="section-title" data-aos="fade-up">
                     <h2>Information of Event Schedules</h2>
@@ -239,9 +238,50 @@
 
                 <div class="mb-4" data-aos="fade-up">
                     <div class="d-md-flex d-inline justify-content-between align-items-start px-2">
-                        <p class="me-3" style="flex: 1;">
+                        <div class="container px-md-5">
+                            <table class="table table-responsive">
+                                <tr>
+                                    <td style="background-color: #3396D9; color: white; width: 250px; height: 100px;">
+                                        <div class="d-flex justify-content-center align-items-center h-100">
+                                            <h5 class="text-white fw-bold text-center m-0">20 August 2025</h5>
+                                        </div>
+                                    </td>
+                                    <td class="text-center align-middle" style="width: 150px; color: var(--accent-color);">
+                                        <i class="bi bi-pencil-square" style="font-size: 40px;"></i>
+                                    </td>
+                                    <td class="align-middle">
+                                        Batas Pengumpulan Artikel
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #2a7bb3; color: white; width: 250px; height: 100px;">
+                                        <div class="d-flex justify-content-center align-items-center h-100">
+                                            <h5 class="text-white fw-bold text-center m-0">23 August 2025</h5>
+                                        </div>
+                                    </td>
+                                    <td class="text-center align-middle" style="width: 150px; color: var(--accent-color);">
+                                        <i class="bi bi-pencil-square" style="font-size: 40px;"></i>
+                                    </td>
+                                    <td class="align-middle">
+                                        Batas Pengumpulan PPT
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #3396D9; color: white; width: 250px; height: 100px;">
+                                        <div class="d-flex justify-content-center align-items-center h-100">
+                                            <h5 class="text-white fw-bold text-center m-0">25 August 2025</h5>
+                                        </div>
+                                    </td>
+                                    <td class="text-center align-middle" style="width: 150px; color: var(--accent-color);">
+                                        <i class="bi bi-easel3-fill" style="font-size: 40px;"></i>
+                                    </td>
+                                    <td class="align-middle">
+                                        Sesi Pararel (Presentasi)
+                                    </td>
+                                </tr>
+                            </table>
                             {{ $landing->schedule_description }}
-                        </p>
+                        </div>
 
                         <div
                             class="conference-day px-4 py-4 rounded-4 text-white fw-bold shadow text-center d-flex align-items-center justify-content-center gap-3 bg-primary mt-4 mt-md-0 m-auto mx-5 mx-md-0">
@@ -259,10 +299,10 @@
                         </div>
                     </div>
 
-                    <div class="d-flex justify-content-center justify-content-md-start">
+                    <!-- <div class="d-flex justify-content-center justify-content-md-start">
                         <a href="{{ route("register") }}" class="btn-custom1 mt-5 mt-md-4 mx-md-0 mx-auto"
                             target="_blank" data-aos="zoom-in" data-aos-delay="500">Registration Now</a>
-                    </div>
+                    </div> -->
 
                 </div>
 
